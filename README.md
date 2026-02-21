@@ -9,9 +9,13 @@ In the era of large-scale AI models, the "Memory Wall" has emerged as a critical
 
 It includes our three design by Congnichip Platform. The main design is included in the "Final Design" folder. Please feel free to check each design and run the testbench.
 
-Team Members (2-4 per team): 
+Team Members: 
+
 [Feiyu Jia, 2001, fj2182@nyu.edu, Assistant Director]
+
 [Heng Pu, 1999, hp2723@nyu.edu, Assistant Director]
+
 [Lixuan Xu, 2003, lx2349@nyu.edu, Assistant Director]
+
 [Yuhan Jiang, 2003, yj3494@nyu.edu, Assistant Director]
 
