@@ -19,3 +19,6 @@ Team Members:
 
 [Yuhan Jiang, 2003, yj3494@nyu.edu, Assistant Director]
 
+
+Video files:
+https://drive.google.com/drive/folders/1FBsTOAM3yhlfgYb_FIVgTlXZeEpj_-cW?usp=sharing
