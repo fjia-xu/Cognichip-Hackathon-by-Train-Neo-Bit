@@ -1,0 +1,1226 @@
+Simulate
+Re-run
+Test your chip design in a virtual environment, validating behavior, performance, and logic before physical implementation.
+
+Run targeted scenarios, catch design flaws early, and gain confidence in how your system will perform under real-world conditions.
+
+Job Name
+222498D0
+Target
+sim_unified
+New Deps
+Use OpenCos command
+
+Total files: 9
+Total size: 36893 bytes
+Files
+Add files
+bandwidth_perf_monitor.sv
+
+DEPS.yml
+
+gradient_accumulator_top.sv
+
+gradient_accumulator.sv
+
+gradient_buffer.sv
+
+gradient_compressor_top.sv
+
+gradient_streamer.sv
+
+gradient_writeback_buffer.sv
+
+tb_unified_gradient_compressor.sv
+
+
+Completed
+26757E44
+Save waveform
+History
+Stdout
+
+
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves sim_unified; (run from /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected verilator (/usr/local/bin/verilator)
+INFO: [EDA] sim: top-most target name: sim_unified
+INFO: [EDA] exec: /usr/local/bin/verilator --binary -Wno-CASEINCOMPLETE -Wno-REALCVT -Wno-SELRANGE -Wno-TIMESCALEMOD -Wno-UNSIGNED -Wno-WIDTH -Wno-fatal --timing --assert --autoflush -sv -CFLAGS -O1 -j 7 --trace-structs --trace-params --trace-fst -top tb_unified_gradient_compressor -o sim.exe +define+SIMULATION /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/gradient_buffer.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/gradient_accumulator_top.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/gradient_writeback_buffer.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/gradient_accumulator.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/gradient_compressor_top.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/bandwidth_perf_monitor.sv /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv (in eda.work/sim_unified.sim, tee_fpath='compile.log')
+INFO: [EDA] PID 4399 for /usr/local/bin/verilator
+%Warning-INITIALDLY: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:144:22: Non-blocking assignment '<=' in initial/final block
+                                                                                                                       : ... This will be executed as a blocking assignment '='!
+  144 |         core_address <= addr;
+      |                      ^~
+                     ... For warning description see https://verilator.org/warn/INITIALDLY?v=5.038
+                     ... Use "/* verilator lint_off INITIALDLY */" and lint_on around source to disable this message.
+%Warning-INITIALDLY: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:145:23: Non-blocking assignment '<=' in initial/final block
+                                                                                                                       : ... This will be executed as a blocking assignment '='!
+  145 |         core_gradient <= grad;
+      |                       ^~
+%Warning-INITIALDLY: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:146:20: Non-blocking assignment '<=' in initial/final block
+                                                                                                                       : ... This will be executed as a blocking assignment '='!
+  146 |         core_valid <= 1'b1;
+      |                    ^~
+%Warning-INITIALDLY: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:150:20: Non-blocking assignment '<=' in initial/final block
+                                                                                                                       : ... This will be executed as a blocking assignment '='!
+  150 |         core_valid <= 1'b0;
+      |                    ^~
+%Warning-INITIALDLY: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:155:20: Non-blocking assignment '<=' in initial/final block
+                                                                                                                       : ... This will be executed as a blocking assignment '='!
+  155 |         core_valid <= 1'b0;
+      |                    ^~
+make: Entering directory '/app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/eda.work/sim_unified.sim/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_fst_c.o /usr/local/share/verilator/include/verilated_fst_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_unified_gradient_compressor__pch.h -o Vtb_unified_gradient_compressor__pch.h.fast.gch
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_unified_gradient_compressor__pch.h -o Vtb_unified_gradient_compressor__pch.h.slow.gch
+echo "" > Vtb_unified_gradient_compressor__ALL.verilator_deplist.tmp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor.o Vtb_unified_gradient_compressor.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor___024root__DepSet_h56ab7896__0.o Vtb_unified_gradient_compressor___024root__DepSet_h56ab7896__0.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__0.o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__0.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__1.o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__1.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor__main.o Vtb_unified_gradient_compressor__main.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.fast -c -o Vtb_unified_gradient_compressor__Trace__0.o Vtb_unified_gradient_compressor__Trace__0.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor__ConstPool_0.o Vtb_unified_gradient_compressor__ConstPool_0.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor___024root__Slow.o Vtb_unified_gradient_compressor___024root__Slow.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor___024root__DepSet_h56ab7896__0__Slow.o Vtb_unified_gradient_compressor___024root__DepSet_h56ab7896__0__Slow.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__0__Slow.o Vtb_unified_gradient_compressor___024root__DepSet_h28073ae0__0__Slow.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor__Syms.o Vtb_unified_gradient_compressor__Syms.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor__Trace__0__Slow.o Vtb_unified_gradient_compressor__Trace__0__Slow.cpp
+ccache g++   -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_unified_gradient_compressor__pch.h.slow -c -o Vtb_unified_gradient_compressor__TraceDecls__0__Slow.o Vtb_unified_gradient_compressor__TraceDecls__0__Slow.cpp
+g++    verilated.o verilated_fst_c.o verilated_timing.o verilated_threads.o Vtb_unified_gradient_compressor__ALL.a   -lz  -pthread -lpthread -latomic   -o sim.exe
+rm Vtb_unified_gradient_compressor__ALL.verilator_deplist.tmp
+make: Leaving directory '/app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/eda.work/sim_unified.sim/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.038 2025-07-08 rev v5.038
+- Verilator: Built from 0.242 MB sources in 8 modules, into 1.541 MB in 13 C++ files needing 0.000 MB
+- Verilator: Walltime 10.085 s (elab=0.003, cvt=0.127, bld=9.932); cpu 0.174 s on 7 threads; alloced 64.008 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/eda.work/sim_unified.sim/compile.log
+INFO: [EDA] Tool - verilator, total counts: 5 tool warnings, 0 tool errors
+INFO: [EDA] exec: ./obj_dir/sim.exe +trace +verilator+seed+1 (in eda.work/sim_unified.sim, tee_fpath='sim.log')
+INFO: [EDA] PID 4528 for ./obj_dir/sim.exe
+
+======================================================================
+     DETAILED WAVEFORM ANALYSIS - All 5 Writeback Mechanisms
+======================================================================
+
+
+======================================================================
+ TEST 1: DIRECT TRIGGER - Large gradients bypass L1 cache
+======================================================================
+[65000] 🔴 L1_DIRECT: #1 addr=0x1000 grad=100 -> L2 FIFO (bypassing L1)
+[75000] ▶️  INPUT: addr=0x1000 grad=100 (large gradient, direct path)
+[75000] 🔴 L1_DIRECT: #2 addr=0x1001 grad=100 -> L2 FIFO (bypassing L1)
+[85000] ▶️  INPUT: addr=0x1001 grad=100 (large gradient, direct path)
+[85000] 🔴 L1_DIRECT: #3 addr=0x1002 grad=100 -> L2 FIFO (bypassing L1)
+[95000] ▶️  INPUT: addr=0x1002 grad=100 (large gradient, direct path)
+[95000] 🔴 L1_DIRECT: #4 addr=0x1003 grad=100 -> L2 FIFO (bypassing L1)
+[105000] ▶️  INPUT: addr=0x1003 grad=100 (large gradient, direct path)
+[105000] 🔴 L1_DIRECT: #5 addr=0x1004 grad=100 -> L2 FIFO (bypassing L1)
+[115000] ▶️  INPUT: addr=0x1004 grad=100 (large gradient, direct path)
+[115000] 🔴 L1_DIRECT: #6 addr=0x1005 grad=100 -> L2 FIFO (bypassing L1)
+[125000] ▶️  INPUT: addr=0x1005 grad=100 (large gradient, direct path)
+[125000] 🔴 L1_DIRECT: #7 addr=0x1006 grad=100 -> L2 FIFO (bypassing L1)
+[135000] ▶️  INPUT: addr=0x1006 grad=100 (large gradient, direct path)
+[135000] 🔴 L1_DIRECT: #8 addr=0x1007 grad=100 -> L2 FIFO (bypassing L1)
+[145000] ▶️  INPUT: addr=0x1007 grad=100 (large gradient, direct path)
+[195000] ✅ TEST 1 COMPLETE: 8 direct triggers sent to FIFO
+
+
+======================================================================
+ TEST 2: ACCUMULATION THRESHOLD - Small gradients accumulate until >= THRESHOLD
+======================================================================
+[205000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 1)
+[215000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 2)
+[225000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 3)
+[235000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 4)
+[245000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 5)
+[255000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 6)
+[265000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 7)
+[275000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 8)
+[275000] 🟡 L1_ACCUM_OVERFLOW: #1 addr=0x2000 |accum| >= THRESHOLD -> L2 FIFO
+[285000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 9)
+[295000] ▶️  INPUT: addr=0x2000 grad=6 (accumulate iteration 10)
+[345000] ✅ TEST 2 COMPLETE: Accumulation crossed threshold
+
+
+======================================================================
+ TEST 3: MAX_UPDATES FORCE-FLUSH - 255 small updates trigger flush
+======================================================================
+[355000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 1/255)
+[835000] 🟡 L1_ACCUM_OVERFLOW: #2 addr=0x3000 |accum| >= THRESHOLD -> L2 FIFO
+[855000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 51/255)
+[1335000] 🟡 L1_ACCUM_OVERFLOW: #3 addr=0x3000 |accum| >= THRESHOLD -> L2 FIFO
+[1355000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 101/255)
+[1835000] 🟡 L1_ACCUM_OVERFLOW: #4 addr=0x3000 |accum| >= THRESHOLD -> L2 FIFO
+[1855000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 151/255)
+[2335000] 🟡 L1_ACCUM_OVERFLOW: #5 addr=0x3000 |accum| >= THRESHOLD -> L2 FIFO
+[2355000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 201/255)
+[2835000] 🟡 L1_ACCUM_OVERFLOW: #6 addr=0x3000 |accum| >= THRESHOLD -> L2 FIFO
+[2855000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 251/255)
+[2895000] ▶️  INPUT: addr=0x3000 grad=1 (tiny gradient 255/255)
+[2945000] ✅ TEST 3 COMPLETE: MAX_UPDATES force-flush triggered
+
+
+======================================================================
+ TEST 4: EVICTION - Tag conflicts cause victim eviction to FIFO
+======================================================================
+Strategy: Fill all 4 ways of a set, then add 5th entry -> eviction!
+Phase 1: Fill all 4 ways of Set 0
+[2955000] ▶️  INPUT: addr=0x0000 grad=10 (Fill way 0 of set 0)
+[2965000] ▶️  INPUT: addr=0x0020 grad=10 (Fill way 1 of set 0)
+[2965000] 🔵 L1_EVICTION: #1 addr=0x0040 tag conflict -> victim to L2 FIFO
+[2975000] ▶️  INPUT: addr=0x0040 grad=10 (Fill way 2 of set 0)
+[2975000] 🔵 L1_EVICTION: #2 addr=0x0060 tag conflict -> victim to L2 FIFO
+[2985000] ▶️  INPUT: addr=0x0060 grad=10 (Fill way 3 of set 0)
+[2985000] 📦 L2_BURST_READY: fifo_count=16 >= BURST_SIZE=16, starting drain to DRAM
+[2995000] 🟢 L3_DRAM_WRITE: #1 addr=0x1000 value=100 (l2_fifo_count=16)
+[3005000] 🟢 L3_DRAM_WRITE: #2 addr=0x1001 value=100 (l2_fifo_count=15)
+
+Phase 2: Add 5th, 6th, 7th, 8th entries -> trigger evictions!
+[3015000] 🔵 L1_EVICTION: #3 addr=0x0080 tag conflict -> victim to L2 FIFO
+[3015000] 🟢 L3_DRAM_WRITE: #3 addr=0x1002 value=100 (l2_fifo_count=14)
+[3025000] ▶️  INPUT: addr=0x0080 grad=15 (NEW entry 1 -> EVICTION!)
+[3025000] 🟢 L3_DRAM_WRITE: #4 addr=0x1003 value=100 (l2_fifo_count=14)
+[3035000] 🔵 L1_EVICTION: #4 addr=0x00a0 tag conflict -> victim to L2 FIFO
+[3035000] 🟢 L3_DRAM_WRITE: #5 addr=0x1004 value=100 (l2_fifo_count=13)
+[3045000] ▶️  INPUT: addr=0x00a0 grad=15 (NEW entry 2 -> EVICTION!)
+[3045000] 🟢 L3_DRAM_WRITE: #6 addr=0x1005 value=100 (l2_fifo_count=13)
+[3055000] 🔵 L1_EVICTION: #5 addr=0x00c0 tag conflict -> victim to L2 FIFO
+[3055000] 🟢 L3_DRAM_WRITE: #7 addr=0x1006 value=100 (l2_fifo_count=12)
+[3065000] ▶️  INPUT: addr=0x00c0 grad=15 (NEW entry 3 -> EVICTION!)
+[3065000] 🟢 L3_DRAM_WRITE: #8 addr=0x1007 value=100 (l2_fifo_count=12)
+[3075000] 🔵 L1_EVICTION: #6 addr=0x00e0 tag conflict -> victim to L2 FIFO
+[3075000] 🟢 L3_DRAM_WRITE: #9 addr=0x2000 value=54 (l2_fifo_count=11)
+[3085000] ▶️  INPUT: addr=0x00e0 grad=15 (NEW entry 4 -> EVICTION!)
+[3085000] 🟢 L3_DRAM_WRITE: #10 addr=0x3000 value=50 (l2_fifo_count=11)
+[3095000] 🟢 L3_DRAM_WRITE: #11 addr=0x3000 value=50 (l2_fifo_count=10)
+[3105000] 🟢 L3_DRAM_WRITE: #12 addr=0x3000 value=50 (l2_fifo_count=9)
+[3115000] 🟢 L3_DRAM_WRITE: #13 addr=0x3000 value=50 (l2_fifo_count=8)
+[3125000] 🟢 L3_DRAM_WRITE: #14 addr=0x3000 value=50 (l2_fifo_count=7)
+[3135000] 🟢 L3_DRAM_WRITE: #15 addr=0x0020 value=10 (l2_fifo_count=6)
+[3145000] ✅ TEST 4 COMPLETE: 6 evictions due to tag conflicts
+
+
+======================================================================
+ TEST 5: FIFO BURST - Accumulate 16+ entries, then batch write to DRAM
+======================================================================
+Current FIFO count before burst: 5
+Pushing 11 more large gradients to trigger burst...
+[3145000] 🔴 L1_DIRECT: #9 addr=0x5000 grad=120 -> L2 FIFO (bypassing L1)
+[3145000] 🟢 L3_DRAM_WRITE: #16 addr=0x0000 value=10 (l2_fifo_count=5)
+[3155000] ▶️  INPUT: addr=0x5000 grad=120 (burst entry 1)
+[3155000] 🔴 L1_DIRECT: #10 addr=0x5001 grad=120 -> L2 FIFO (bypassing L1)
+[3155000] 🟢 L3_DRAM_WRITE: #17 addr=0x3000 value=5 (l2_fifo_count=5)
+[3165000] ▶️  INPUT: addr=0x5001 grad=120 (burst entry 2)
+[3165000] 🔴 L1_DIRECT: #11 addr=0x5002 grad=120 -> L2 FIFO (bypassing L1)
+[3165000] 🟢 L3_DRAM_WRITE: #18 addr=0x2000 value=6 (l2_fifo_count=5)
+[3175000] ▶️  INPUT: addr=0x5002 grad=120 (burst entry 3)
+[3175000] 🔴 L1_DIRECT: #12 addr=0x5003 grad=120 -> L2 FIFO (bypassing L1)
+[3175000] 🟢 L3_DRAM_WRITE: #19 addr=0x0040 value=10 (l2_fifo_count=5)
+[3185000] ▶️  INPUT: addr=0x5003 grad=120 (burst entry 4)
+[3185000] 🔴 L1_DIRECT: #13 addr=0x5004 grad=120 -> L2 FIFO (bypassing L1)
+[3185000] 🟢 L3_DRAM_WRITE: #20 addr=0x0060 value=10 (l2_fifo_count=5)
+[3195000] ▶️  INPUT: addr=0x5004 grad=120 (burst entry 5)
+[3195000] 🔴 L1_DIRECT: #14 addr=0x5005 grad=120 -> L2 FIFO (bypassing L1)
+[3195000] 🟢 L3_DRAM_WRITE: #21 addr=0x5000 value=120 (l2_fifo_count=5)
+[3205000] ▶️  INPUT: addr=0x5005 grad=120 (burst entry 6)
+[3205000] 🔴 L1_DIRECT: #15 addr=0x5006 grad=120 -> L2 FIFO (bypassing L1)
+[3205000] 🟢 L3_DRAM_WRITE: #22 addr=0x5001 value=120 (l2_fifo_count=5)
+[3215000] ▶️  INPUT: addr=0x5006 grad=120 (burst entry 7)
+[3215000] 🔴 L1_DIRECT: #16 addr=0x5007 grad=120 -> L2 FIFO (bypassing L1)
+[3215000] 🟢 L3_DRAM_WRITE: #23 addr=0x5002 value=120 (l2_fifo_count=5)
+[3225000] ▶️  INPUT: addr=0x5007 grad=120 (burst entry 8)
+[3225000] 🔴 L1_DIRECT: #17 addr=0x5008 grad=120 -> L2 FIFO (bypassing L1)
+[3225000] 🟢 L3_DRAM_WRITE: #24 addr=0x5003 value=120 (l2_fifo_count=5)
+[3235000] ▶️  INPUT: addr=0x5008 grad=120 (burst entry 9)
+[3235000] 🔴 L1_DIRECT: #18 addr=0x5009 grad=120 -> L2 FIFO (bypassing L1)
+[3235000] 🟢 L3_DRAM_WRITE: #25 addr=0x5004 value=120 (l2_fifo_count=5)
+[3245000] ▶️  INPUT: addr=0x5009 grad=120 (burst entry 10)
+[3245000] 🔴 L1_DIRECT: #19 addr=0x500a grad=120 -> L2 FIFO (bypassing L1)
+[3245000] 🟢 L3_DRAM_WRITE: #26 addr=0x5005 value=120 (l2_fifo_count=5)
+[3255000] ▶️  INPUT: addr=0x500a grad=120 (burst entry 11)
+
+⏳ Waiting for FIFO burst drain to DRAM...
+[3255000] 🟢 L3_DRAM_WRITE: #27 addr=0x5006 value=120 (l2_fifo_count=5)
+[3265000] 🟢 L3_DRAM_WRITE: #28 addr=0x5007 value=120 (l2_fifo_count=4)
+[3275000] 🟢 L3_DRAM_WRITE: #29 addr=0x5008 value=120 (l2_fifo_count=3)
+[3285000] 🟢 L3_DRAM_WRITE: #30 addr=0x5009 value=120 (l2_fifo_count=2)
+[3295000] 🟢 L3_DRAM_WRITE: #31 addr=0x500a value=120 (l2_fifo_count=1)
+[3755000] ✅ TEST 5 COMPLETE: FIFO burst mechanism tested
+[3755000] 🔵 L1_EVICTION: #7 addr=0x0100 tag conflict -> victim to L2 FIFO
+[6955000] 🔴 L1_DIRECT: #20 addr=0x1000 grad=100 -> L2 FIFO (bypassing L1)
+[6965000] 🔴 L1_DIRECT: #21 addr=0x1001 grad=100 -> L2 FIFO (bypassing L1)
+[6975000] 🔴 L1_DIRECT: #22 addr=0x1002 grad=100 -> L2 FIFO (bypassing L1)
+[6985000] 🔴 L1_DIRECT: #23 addr=0x1003 grad=100 -> L2 FIFO (bypassing L1)
+[6995000] 🔴 L1_DIRECT: #24 addr=0x1004 grad=100 -> L2 FIFO (bypassing L1)
+[7005000] 🔴 L1_DIRECT: #25 addr=0x1005 grad=100 -> L2 FIFO (bypassing L1)
+[7015000] 🔴 L1_DIRECT: #26 addr=0x1006 grad=100 -> L2 FIFO (bypassing L1)
+[7025000] 🔴 L1_DIRECT: #27 addr=0x1007 grad=100 -> L2 FIFO (bypassing L1)
+[7035000] 🔴 L1_DIRECT: #28 addr=0x1008 grad=100 -> L2 FIFO (bypassing L1)
+[7045000] 🔴 L1_DIRECT: #29 addr=0x1009 grad=100 -> L2 FIFO (bypassing L1)
+[7055000] 🔴 L1_DIRECT: #30 addr=0x100a grad=100 -> L2 FIFO (bypassing L1)
+[7065000] 🔴 L1_DIRECT: #31 addr=0x100b grad=100 -> L2 FIFO (bypassing L1)
+[7075000] 🔴 L1_DIRECT: #32 addr=0x100c grad=100 -> L2 FIFO (bypassing L1)
+[7085000] 🔴 L1_DIRECT: #33 addr=0x100d grad=100 -> L2 FIFO (bypassing L1)
+[7095000] 🔴 L1_DIRECT: #34 addr=0x100e grad=100 -> L2 FIFO (bypassing L1)
+[7105000] 🔴 L1_DIRECT: #35 addr=0x100f grad=100 -> L2 FIFO (bypassing L1)
+[7105000] 📦 L2_BURST_READY: fifo_count=16 >= BURST_SIZE=16, starting drain to DRAM
+[7115000] 🔴 L1_DIRECT: #36 addr=0x1010 grad=100 -> L2 FIFO (bypassing L1)
+[7115000] 🟢 L3_DRAM_WRITE: #32 addr=0x0080 value=15 (l2_fifo_count=17)
+[7125000] 🔴 L1_DIRECT: #37 addr=0x1011 grad=100 -> L2 FIFO (bypassing L1)
+[7125000] 🟢 L3_DRAM_WRITE: #33 addr=0x1000 value=100 (l2_fifo_count=17)
+[7135000] 🔴 L1_DIRECT: #38 addr=0x1012 grad=100 -> L2 FIFO (bypassing L1)
+[7135000] 🟢 L3_DRAM_WRITE: #34 addr=0x1001 value=100 (l2_fifo_count=17)
+[7145000] 🔴 L1_DIRECT: #39 addr=0x1013 grad=100 -> L2 FIFO (bypassing L1)
+[7145000] 🟢 L3_DRAM_WRITE: #35 addr=0x1002 value=100 (l2_fifo_count=17)
+[7155000] 🔴 L1_DIRECT: #40 addr=0x1014 grad=100 -> L2 FIFO (bypassing L1)
+[7155000] 🟢 L3_DRAM_WRITE: #36 addr=0x1003 value=100 (l2_fifo_count=17)
+[7165000] 🔴 L1_DIRECT: #41 addr=0x1015 grad=100 -> L2 FIFO (bypassing L1)
+[7165000] 🟢 L3_DRAM_WRITE: #37 addr=0x1004 value=100 (l2_fifo_count=17)
+[7175000] 🔴 L1_DIRECT: #42 addr=0x1016 grad=100 -> L2 FIFO (bypassing L1)
+[7175000] 🟢 L3_DRAM_WRITE: #38 addr=0x1005 value=100 (l2_fifo_count=17)
+[7185000] 🔴 L1_DIRECT: #43 addr=0x1017 grad=100 -> L2 FIFO (bypassing L1)
+[7185000] 🟢 L3_DRAM_WRITE: #39 addr=0x1006 value=100 (l2_fifo_count=17)
+[7195000] 🔴 L1_DIRECT: #44 addr=0x1018 grad=100 -> L2 FIFO (bypassing L1)
+[7195000] 🟢 L3_DRAM_WRITE: #40 addr=0x1007 value=100 (l2_fifo_count=17)
+[7205000] 🔴 L1_DIRECT: #45 addr=0x1019 grad=100 -> L2 FIFO (bypassing L1)
+[7205000] 🟢 L3_DRAM_WRITE: #41 addr=0x1008 value=100 (l2_fifo_count=17)
+[7215000] 🔴 L1_DIRECT: #46 addr=0x101a grad=100 -> L2 FIFO (bypassing L1)
+[7215000] 🟢 L3_DRAM_WRITE: #42 addr=0x1009 value=100 (l2_fifo_count=17)
+[7225000] 🔴 L1_DIRECT: #47 addr=0x101b grad=100 -> L2 FIFO (bypassing L1)
+[7225000] 🟢 L3_DRAM_WRITE: #43 addr=0x100a value=100 (l2_fifo_count=17)
+[7235000] 🔴 L1_DIRECT: #48 addr=0x101c grad=100 -> L2 FIFO (bypassing L1)
+[7235000] 🟢 L3_DRAM_WRITE: #44 addr=0x100b value=100 (l2_fifo_count=17)
+[7245000] 🔴 L1_DIRECT: #49 addr=0x101d grad=100 -> L2 FIFO (bypassing L1)
+[7245000] 🟢 L3_DRAM_WRITE: #45 addr=0x100c value=100 (l2_fifo_count=17)
+[7255000] 🔴 L1_DIRECT: #50 addr=0x101e grad=100 -> L2 FIFO (bypassing L1)
+[7255000] 🟢 L3_DRAM_WRITE: #46 addr=0x100d value=100 (l2_fifo_count=17)
+[7265000] 🔴 L1_DIRECT: #51 addr=0x101f grad=100 -> L2 FIFO (bypassing L1)
+[7265000] 🟢 L3_DRAM_WRITE: #47 addr=0x100e value=100 (l2_fifo_count=17)
+[7275000] 🔴 L1_DIRECT: #52 addr=0x1020 grad=100 -> L2 FIFO (bypassing L1)
+[7275000] 🟢 L3_DRAM_WRITE: #48 addr=0x100f value=100 (l2_fifo_count=17)
+[7285000] 🔴 L1_DIRECT: #53 addr=0x1021 grad=100 -> L2 FIFO (bypassing L1)
+[7285000] 🟢 L3_DRAM_WRITE: #49 addr=0x1010 value=100 (l2_fifo_count=17)
+[7295000] 🔴 L1_DIRECT: #54 addr=0x1022 grad=100 -> L2 FIFO (bypassing L1)
+[7295000] 🟢 L3_DRAM_WRITE: #50 addr=0x1011 value=100 (l2_fifo_count=17)
+[7305000] 🔴 L1_DIRECT: #55 addr=0x1023 grad=100 -> L2 FIFO (bypassing L1)
+[7305000] 🟢 L3_DRAM_WRITE: #51 addr=0x1012 value=100 (l2_fifo_count=17)
+[7315000] 🔴 L1_DIRECT: #56 addr=0x1024 grad=100 -> L2 FIFO (bypassing L1)
+[7315000] 🟢 L3_DRAM_WRITE: #52 addr=0x1013 value=100 (l2_fifo_count=17)
+[7325000] 🔴 L1_DIRECT: #57 addr=0x1025 grad=100 -> L2 FIFO (bypassing L1)
+[7325000] 🟢 L3_DRAM_WRITE: #53 addr=0x1014 value=100 (l2_fifo_count=17)
+[7335000] 🔴 L1_DIRECT: #58 addr=0x1026 grad=100 -> L2 FIFO (bypassing L1)
+[7335000] 🟢 L3_DRAM_WRITE: #54 addr=0x1015 value=100 (l2_fifo_count=17)
+[7345000] 🔴 L1_DIRECT: #59 addr=0x1027 grad=100 -> L2 FIFO (bypassing L1)
+[7345000] 🟢 L3_DRAM_WRITE: #55 addr=0x1016 value=100 (l2_fifo_count=17)
+[7355000] 🔴 L1_DIRECT: #60 addr=0x1028 grad=100 -> L2 FIFO (bypassing L1)
+[7355000] 🟢 L3_DRAM_WRITE: #56 addr=0x1017 value=100 (l2_fifo_count=17)
+[7365000] 🔴 L1_DIRECT: #61 addr=0x1029 grad=100 -> L2 FIFO (bypassing L1)
+[7365000] 🟢 L3_DRAM_WRITE: #57 addr=0x1018 value=100 (l2_fifo_count=17)
+[7375000] 🔴 L1_DIRECT: #62 addr=0x102a grad=100 -> L2 FIFO (bypassing L1)
+[7375000] 🟢 L3_DRAM_WRITE: #58 addr=0x1019 value=100 (l2_fifo_count=17)
+[7385000] 🔴 L1_DIRECT: #63 addr=0x102b grad=100 -> L2 FIFO (bypassing L1)
+[7385000] 🟢 L3_DRAM_WRITE: #59 addr=0x101a value=100 (l2_fifo_count=17)
+[7395000] 🔴 L1_DIRECT: #64 addr=0x102c grad=100 -> L2 FIFO (bypassing L1)
+[7395000] 🟢 L3_DRAM_WRITE: #60 addr=0x101b value=100 (l2_fifo_count=17)
+[7405000] 🔴 L1_DIRECT: #65 addr=0x102d grad=100 -> L2 FIFO (bypassing L1)
+[7405000] 🟢 L3_DRAM_WRITE: #61 addr=0x101c value=100 (l2_fifo_count=17)
+[7415000] 🔴 L1_DIRECT: #66 addr=0x102e grad=100 -> L2 FIFO (bypassing L1)
+[7415000] 🟢 L3_DRAM_WRITE: #62 addr=0x101d value=100 (l2_fifo_count=17)
+[7425000] 🔴 L1_DIRECT: #67 addr=0x102f grad=100 -> L2 FIFO (bypassing L1)
+[7425000] 🟢 L3_DRAM_WRITE: #63 addr=0x101e value=100 (l2_fifo_count=17)
+[7435000] 🔴 L1_DIRECT: #68 addr=0x1030 grad=100 -> L2 FIFO (bypassing L1)
+[7435000] 🟢 L3_DRAM_WRITE: #64 addr=0x101f value=100 (l2_fifo_count=17)
+[7445000] 🔴 L1_DIRECT: #69 addr=0x1031 grad=100 -> L2 FIFO (bypassing L1)
+[7445000] 🟢 L3_DRAM_WRITE: #65 addr=0x1020 value=100 (l2_fifo_count=17)
+[7455000] 🔴 L1_DIRECT: #70 addr=0x1032 grad=100 -> L2 FIFO (bypassing L1)
+[7455000] 🟢 L3_DRAM_WRITE: #66 addr=0x1021 value=100 (l2_fifo_count=17)
+[7465000] 🔴 L1_DIRECT: #71 addr=0x1033 grad=100 -> L2 FIFO (bypassing L1)
+[7465000] 🟢 L3_DRAM_WRITE: #67 addr=0x1022 value=100 (l2_fifo_count=17)
+[7475000] 🔴 L1_DIRECT: #72 addr=0x1034 grad=100 -> L2 FIFO (bypassing L1)
+[7475000] 🟢 L3_DRAM_WRITE: #68 addr=0x1023 value=100 (l2_fifo_count=17)
+[7485000] 🔴 L1_DIRECT: #73 addr=0x1035 grad=100 -> L2 FIFO (bypassing L1)
+[7485000] 🟢 L3_DRAM_WRITE: #69 addr=0x1024 value=100 (l2_fifo_count=17)
+[7495000] 🔴 L1_DIRECT: #74 addr=0x1036 grad=100 -> L2 FIFO (bypassing L1)
+[7495000] 🟢 L3_DRAM_WRITE: #70 addr=0x1025 value=100 (l2_fifo_count=17)
+[7505000] 🔴 L1_DIRECT: #75 addr=0x1037 grad=100 -> L2 FIFO (bypassing L1)
+[7505000] 🟢 L3_DRAM_WRITE: #71 addr=0x1026 value=100 (l2_fifo_count=17)
+[7515000] 🔴 L1_DIRECT: #76 addr=0x1038 grad=100 -> L2 FIFO (bypassing L1)
+[7515000] 🟢 L3_DRAM_WRITE: #72 addr=0x1027 value=100 (l2_fifo_count=17)
+[7525000] 🔴 L1_DIRECT: #77 addr=0x1039 grad=100 -> L2 FIFO (bypassing L1)
+[7525000] 🟢 L3_DRAM_WRITE: #73 addr=0x1028 value=100 (l2_fifo_count=17)
+[7535000] 🔴 L1_DIRECT: #78 addr=0x103a grad=100 -> L2 FIFO (bypassing L1)
+[7535000] 🟢 L3_DRAM_WRITE: #74 addr=0x1029 value=100 (l2_fifo_count=17)
+[7545000] 🔴 L1_DIRECT: #79 addr=0x103b grad=100 -> L2 FIFO (bypassing L1)
+[7545000] 🟢 L3_DRAM_WRITE: #75 addr=0x102a value=100 (l2_fifo_count=17)
+[7555000] 🔴 L1_DIRECT: #80 addr=0x103c grad=100 -> L2 FIFO (bypassing L1)
+[7555000] 🟢 L3_DRAM_WRITE: #76 addr=0x102b value=100 (l2_fifo_count=17)
+[7565000] 🔴 L1_DIRECT: #81 addr=0x103d grad=100 -> L2 FIFO (bypassing L1)
+[7565000] 🟢 L3_DRAM_WRITE: #77 addr=0x102c value=100 (l2_fifo_count=17)
+[7575000] 🔴 L1_DIRECT: #82 addr=0x103e grad=100 -> L2 FIFO (bypassing L1)
+[7575000] 🟢 L3_DRAM_WRITE: #78 addr=0x102d value=100 (l2_fifo_count=17)
+[7585000] 🔴 L1_DIRECT: #83 addr=0x103f grad=100 -> L2 FIFO (bypassing L1)
+[7585000] 🟢 L3_DRAM_WRITE: #79 addr=0x102e value=100 (l2_fifo_count=17)
+[7595000] 🔴 L1_DIRECT: #84 addr=0x1040 grad=100 -> L2 FIFO (bypassing L1)
+[7595000] 🟢 L3_DRAM_WRITE: #80 addr=0x102f value=100 (l2_fifo_count=17)
+[7605000] 🔴 L1_DIRECT: #85 addr=0x1041 grad=100 -> L2 FIFO (bypassing L1)
+[7605000] 🟢 L3_DRAM_WRITE: #81 addr=0x1030 value=100 (l2_fifo_count=17)
+[7615000] 🔴 L1_DIRECT: #86 addr=0x1042 grad=100 -> L2 FIFO (bypassing L1)
+[7615000] 🟢 L3_DRAM_WRITE: #82 addr=0x1031 value=100 (l2_fifo_count=17)
+[7625000] 🔴 L1_DIRECT: #87 addr=0x1043 grad=100 -> L2 FIFO (bypassing L1)
+[7625000] 🟢 L3_DRAM_WRITE: #83 addr=0x1032 value=100 (l2_fifo_count=17)
+[7635000] 🔴 L1_DIRECT: #88 addr=0x1044 grad=100 -> L2 FIFO (bypassing L1)
+[7635000] 🟢 L3_DRAM_WRITE: #84 addr=0x1033 value=100 (l2_fifo_count=17)
+[7645000] 🔴 L1_DIRECT: #89 addr=0x1045 grad=100 -> L2 FIFO (bypassing L1)
+[7645000] 🟢 L3_DRAM_WRITE: #85 addr=0x1034 value=100 (l2_fifo_count=17)
+[7655000] 🔴 L1_DIRECT: #90 addr=0x1046 grad=100 -> L2 FIFO (bypassing L1)
+[7655000] 🟢 L3_DRAM_WRITE: #86 addr=0x1035 value=100 (l2_fifo_count=17)
+[7665000] 🔴 L1_DIRECT: #91 addr=0x1047 grad=100 -> L2 FIFO (bypassing L1)
+[7665000] 🟢 L3_DRAM_WRITE: #87 addr=0x1036 value=100 (l2_fifo_count=17)
+[7675000] 🔴 L1_DIRECT: #92 addr=0x1048 grad=100 -> L2 FIFO (bypassing L1)
+[7675000] 🟢 L3_DRAM_WRITE: #88 addr=0x1037 value=100 (l2_fifo_count=17)
+[7685000] 🔴 L1_DIRECT: #93 addr=0x1049 grad=100 -> L2 FIFO (bypassing L1)
+[7685000] 🟢 L3_DRAM_WRITE: #89 addr=0x1038 value=100 (l2_fifo_count=17)
+[7695000] 🔴 L1_DIRECT: #94 addr=0x104a grad=100 -> L2 FIFO (bypassing L1)
+[7695000] 🟢 L3_DRAM_WRITE: #90 addr=0x1039 value=100 (l2_fifo_count=17)
+[7705000] 🔴 L1_DIRECT: #95 addr=0x104b grad=100 -> L2 FIFO (bypassing L1)
+[7705000] 🟢 L3_DRAM_WRITE: #91 addr=0x103a value=100 (l2_fifo_count=17)
+[7715000] 🔴 L1_DIRECT: #96 addr=0x104c grad=100 -> L2 FIFO (bypassing L1)
+[7715000] 🟢 L3_DRAM_WRITE: #92 addr=0x103b value=100 (l2_fifo_count=17)
+[7725000] 🔴 L1_DIRECT: #97 addr=0x104d grad=100 -> L2 FIFO (bypassing L1)
+[7725000] 🟢 L3_DRAM_WRITE: #93 addr=0x103c value=100 (l2_fifo_count=17)
+[7735000] 🔴 L1_DIRECT: #98 addr=0x104e grad=100 -> L2 FIFO (bypassing L1)
+[7735000] 🟢 L3_DRAM_WRITE: #94 addr=0x103d value=100 (l2_fifo_count=17)
+[7745000] 🔴 L1_DIRECT: #99 addr=0x104f grad=100 -> L2 FIFO (bypassing L1)
+[7745000] 🟢 L3_DRAM_WRITE: #95 addr=0x103e value=100 (l2_fifo_count=17)
+[7755000] 🔴 L1_DIRECT: #100 addr=0x1050 grad=100 -> L2 FIFO (bypassing L1)
+[7755000] 🟢 L3_DRAM_WRITE: #96 addr=0x103f value=100 (l2_fifo_count=17)
+[7765000] 🔴 L1_DIRECT: #101 addr=0x1051 grad=100 -> L2 FIFO (bypassing L1)
+[7765000] 🟢 L3_DRAM_WRITE: #97 addr=0x1040 value=100 (l2_fifo_count=17)
+[7775000] 🔴 L1_DIRECT: #102 addr=0x1052 grad=100 -> L2 FIFO (bypassing L1)
+[7775000] 🟢 L3_DRAM_WRITE: #98 addr=0x1041 value=100 (l2_fifo_count=17)
+[7785000] 🔴 L1_DIRECT: #103 addr=0x1053 grad=100 -> L2 FIFO (bypassing L1)
+[7785000] 🟢 L3_DRAM_WRITE: #99 addr=0x1042 value=100 (l2_fifo_count=17)
+[7795000] 🔴 L1_DIRECT: #104 addr=0x1054 grad=100 -> L2 FIFO (bypassing L1)
+[7795000] 🟢 L3_DRAM_WRITE: #100 addr=0x1043 value=100 (l2_fifo_count=17)
+[7805000] 🔴 L1_DIRECT: #105 addr=0x1055 grad=100 -> L2 FIFO (bypassing L1)
+[7805000] 🟢 L3_DRAM_WRITE: #101 addr=0x1044 value=100 (l2_fifo_count=17)
+[7815000] 🔴 L1_DIRECT: #106 addr=0x1056 grad=100 -> L2 FIFO (bypassing L1)
+[7815000] 🟢 L3_DRAM_WRITE: #102 addr=0x1045 value=100 (l2_fifo_count=17)
+[7825000] 🔴 L1_DIRECT: #107 addr=0x1057 grad=100 -> L2 FIFO (bypassing L1)
+[7825000] 🟢 L3_DRAM_WRITE: #103 addr=0x1046 value=100 (l2_fifo_count=17)
+[7835000] 🔴 L1_DIRECT: #108 addr=0x1058 grad=100 -> L2 FIFO (bypassing L1)
+[7835000] 🟢 L3_DRAM_WRITE: #104 addr=0x1047 value=100 (l2_fifo_count=17)
+[7845000] 🔴 L1_DIRECT: #109 addr=0x1059 grad=100 -> L2 FIFO (bypassing L1)
+[7845000] 🟢 L3_DRAM_WRITE: #105 addr=0x1048 value=100 (l2_fifo_count=17)
+[7855000] 🔴 L1_DIRECT: #110 addr=0x105a grad=100 -> L2 FIFO (bypassing L1)
+[7855000] 🟢 L3_DRAM_WRITE: #106 addr=0x1049 value=100 (l2_fifo_count=17)
+[7865000] 🔴 L1_DIRECT: #111 addr=0x105b grad=100 -> L2 FIFO (bypassing L1)
+[7865000] 🟢 L3_DRAM_WRITE: #107 addr=0x104a value=100 (l2_fifo_count=17)
+[7875000] 🔴 L1_DIRECT: #112 addr=0x105c grad=100 -> L2 FIFO (bypassing L1)
+[7875000] 🟢 L3_DRAM_WRITE: #108 addr=0x104b value=100 (l2_fifo_count=17)
+[7885000] 🔴 L1_DIRECT: #113 addr=0x105d grad=100 -> L2 FIFO (bypassing L1)
+[7885000] 🟢 L3_DRAM_WRITE: #109 addr=0x104c value=100 (l2_fifo_count=17)
+[7895000] 🔴 L1_DIRECT: #114 addr=0x105e grad=100 -> L2 FIFO (bypassing L1)
+[7895000] 🟢 L3_DRAM_WRITE: #110 addr=0x104d value=100 (l2_fifo_count=17)
+[7905000] 🔴 L1_DIRECT: #115 addr=0x105f grad=100 -> L2 FIFO (bypassing L1)
+[7905000] 🟢 L3_DRAM_WRITE: #111 addr=0x104e value=100 (l2_fifo_count=17)
+[7915000] 🔴 L1_DIRECT: #116 addr=0x1060 grad=100 -> L2 FIFO (bypassing L1)
+[7915000] 🟢 L3_DRAM_WRITE: #112 addr=0x104f value=100 (l2_fifo_count=17)
+[7925000] 🔴 L1_DIRECT: #117 addr=0x1061 grad=100 -> L2 FIFO (bypassing L1)
+[7925000] 🟢 L3_DRAM_WRITE: #113 addr=0x1050 value=100 (l2_fifo_count=17)
+[7935000] 🔴 L1_DIRECT: #118 addr=0x1062 grad=100 -> L2 FIFO (bypassing L1)
+[7935000] 🟢 L3_DRAM_WRITE: #114 addr=0x1051 value=100 (l2_fifo_count=17)
+[7945000] 🔴 L1_DIRECT: #119 addr=0x1063 grad=100 -> L2 FIFO (bypassing L1)
+[7945000] 🟢 L3_DRAM_WRITE: #115 addr=0x1052 value=100 (l2_fifo_count=17)
+[7955000] 🔴 L1_DIRECT: #120 addr=0x1064 grad=100 -> L2 FIFO (bypassing L1)
+[7955000] 🟢 L3_DRAM_WRITE: #116 addr=0x1053 value=100 (l2_fifo_count=17)
+[7965000] 🔴 L1_DIRECT: #121 addr=0x1065 grad=100 -> L2 FIFO (bypassing L1)
+[7965000] 🟢 L3_DRAM_WRITE: #117 addr=0x1054 value=100 (l2_fifo_count=17)
+[7975000] 🔴 L1_DIRECT: #122 addr=0x1066 grad=100 -> L2 FIFO (bypassing L1)
+[7975000] 🟢 L3_DRAM_WRITE: #118 addr=0x1055 value=100 (l2_fifo_count=17)
+[7985000] 🔴 L1_DIRECT: #123 addr=0x1067 grad=100 -> L2 FIFO (bypassing L1)
+[7985000] 🟢 L3_DRAM_WRITE: #119 addr=0x1056 value=100 (l2_fifo_count=17)
+[7995000] 🔴 L1_DIRECT: #124 addr=0x1068 grad=100 -> L2 FIFO (bypassing L1)
+[7995000] 🟢 L3_DRAM_WRITE: #120 addr=0x1057 value=100 (l2_fifo_count=17)
+[8005000] 🔴 L1_DIRECT: #125 addr=0x1069 grad=100 -> L2 FIFO (bypassing L1)
+[8005000] 🟢 L3_DRAM_WRITE: #121 addr=0x1058 value=100 (l2_fifo_count=17)
+[8015000] 🔴 L1_DIRECT: #126 addr=0x106a grad=100 -> L2 FIFO (bypassing L1)
+[8015000] 🟢 L3_DRAM_WRITE: #122 addr=0x1059 value=100 (l2_fifo_count=17)
+[8025000] 🔴 L1_DIRECT: #127 addr=0x106b grad=100 -> L2 FIFO (bypassing L1)
+[8025000] 🟢 L3_DRAM_WRITE: #123 addr=0x105a value=100 (l2_fifo_count=17)
+[8035000] 🔴 L1_DIRECT: #128 addr=0x106c grad=100 -> L2 FIFO (bypassing L1)
+[8035000] 🟢 L3_DRAM_WRITE: #124 addr=0x105b value=100 (l2_fifo_count=17)
+[8045000] 🔴 L1_DIRECT: #129 addr=0x106d grad=100 -> L2 FIFO (bypassing L1)
+[8045000] 🟢 L3_DRAM_WRITE: #125 addr=0x105c value=100 (l2_fifo_count=17)
+[8055000] 🔴 L1_DIRECT: #130 addr=0x106e grad=100 -> L2 FIFO (bypassing L1)
+[8055000] 🟢 L3_DRAM_WRITE: #126 addr=0x105d value=100 (l2_fifo_count=17)
+[8065000] 🔴 L1_DIRECT: #131 addr=0x106f grad=100 -> L2 FIFO (bypassing L1)
+[8065000] 🟢 L3_DRAM_WRITE: #127 addr=0x105e value=100 (l2_fifo_count=17)
+[8075000] 🔴 L1_DIRECT: #132 addr=0x1070 grad=100 -> L2 FIFO (bypassing L1)
+[8075000] 🟢 L3_DRAM_WRITE: #128 addr=0x105f value=100 (l2_fifo_count=17)
+[8085000] 🔴 L1_DIRECT: #133 addr=0x1071 grad=100 -> L2 FIFO (bypassing L1)
+[8085000] 🟢 L3_DRAM_WRITE: #129 addr=0x1060 value=100 (l2_fifo_count=17)
+[8095000] 🔴 L1_DIRECT: #134 addr=0x1072 grad=100 -> L2 FIFO (bypassing L1)
+[8095000] 🟢 L3_DRAM_WRITE: #130 addr=0x1061 value=100 (l2_fifo_count=17)
+[8105000] 🔴 L1_DIRECT: #135 addr=0x1073 grad=100 -> L2 FIFO (bypassing L1)
+[8105000] 🟢 L3_DRAM_WRITE: #131 addr=0x1062 value=100 (l2_fifo_count=17)
+[8115000] 🔴 L1_DIRECT: #136 addr=0x1074 grad=100 -> L2 FIFO (bypassing L1)
+[8115000] 🟢 L3_DRAM_WRITE: #132 addr=0x1063 value=100 (l2_fifo_count=17)
+[8125000] 🔴 L1_DIRECT: #137 addr=0x1075 grad=100 -> L2 FIFO (bypassing L1)
+[8125000] 🟢 L3_DRAM_WRITE: #133 addr=0x1064 value=100 (l2_fifo_count=17)
+[8135000] 🔴 L1_DIRECT: #138 addr=0x1076 grad=100 -> L2 FIFO (bypassing L1)
+[8135000] 🟢 L3_DRAM_WRITE: #134 addr=0x1065 value=100 (l2_fifo_count=17)
+[8145000] 🔴 L1_DIRECT: #139 addr=0x1077 grad=100 -> L2 FIFO (bypassing L1)
+[8145000] 🟢 L3_DRAM_WRITE: #135 addr=0x1066 value=100 (l2_fifo_count=17)
+[8155000] 🔴 L1_DIRECT: #140 addr=0x1078 grad=100 -> L2 FIFO (bypassing L1)
+[8155000] 🟢 L3_DRAM_WRITE: #136 addr=0x1067 value=100 (l2_fifo_count=17)
+[8165000] 🔴 L1_DIRECT: #141 addr=0x1079 grad=100 -> L2 FIFO (bypassing L1)
+[8165000] 🟢 L3_DRAM_WRITE: #137 addr=0x1068 value=100 (l2_fifo_count=17)
+[8175000] 🔴 L1_DIRECT: #142 addr=0x107a grad=100 -> L2 FIFO (bypassing L1)
+[8175000] 🟢 L3_DRAM_WRITE: #138 addr=0x1069 value=100 (l2_fifo_count=17)
+[8185000] 🔴 L1_DIRECT: #143 addr=0x107b grad=100 -> L2 FIFO (bypassing L1)
+[8185000] 🟢 L3_DRAM_WRITE: #139 addr=0x106a value=100 (l2_fifo_count=17)
+[8195000] 🔴 L1_DIRECT: #144 addr=0x107c grad=100 -> L2 FIFO (bypassing L1)
+[8195000] 🟢 L3_DRAM_WRITE: #140 addr=0x106b value=100 (l2_fifo_count=17)
+[8205000] 🔴 L1_DIRECT: #145 addr=0x107d grad=100 -> L2 FIFO (bypassing L1)
+[8205000] 🟢 L3_DRAM_WRITE: #141 addr=0x106c value=100 (l2_fifo_count=17)
+[8215000] 🔴 L1_DIRECT: #146 addr=0x107e grad=100 -> L2 FIFO (bypassing L1)
+[8215000] 🟢 L3_DRAM_WRITE: #142 addr=0x106d value=100 (l2_fifo_count=17)
+[8225000] 🔴 L1_DIRECT: #147 addr=0x107f grad=100 -> L2 FIFO (bypassing L1)
+[8225000] 🟢 L3_DRAM_WRITE: #143 addr=0x106e value=100 (l2_fifo_count=17)
+[8235000] 🔴 L1_DIRECT: #148 addr=0x1080 grad=100 -> L2 FIFO (bypassing L1)
+[8235000] 🟢 L3_DRAM_WRITE: #144 addr=0x106f value=100 (l2_fifo_count=17)
+[8245000] 🔴 L1_DIRECT: #149 addr=0x1081 grad=100 -> L2 FIFO (bypassing L1)
+[8245000] 🟢 L3_DRAM_WRITE: #145 addr=0x1070 value=100 (l2_fifo_count=17)
+[8255000] 🔴 L1_DIRECT: #150 addr=0x1082 grad=100 -> L2 FIFO (bypassing L1)
+[8255000] 🟢 L3_DRAM_WRITE: #146 addr=0x1071 value=100 (l2_fifo_count=17)
+[8265000] 🔴 L1_DIRECT: #151 addr=0x1083 grad=100 -> L2 FIFO (bypassing L1)
+[8265000] 🟢 L3_DRAM_WRITE: #147 addr=0x1072 value=100 (l2_fifo_count=17)
+[8275000] 🔴 L1_DIRECT: #152 addr=0x1084 grad=100 -> L2 FIFO (bypassing L1)
+[8275000] 🟢 L3_DRAM_WRITE: #148 addr=0x1073 value=100 (l2_fifo_count=17)
+[8285000] 🔴 L1_DIRECT: #153 addr=0x1085 grad=100 -> L2 FIFO (bypassing L1)
+[8285000] 🟢 L3_DRAM_WRITE: #149 addr=0x1074 value=100 (l2_fifo_count=17)
+[8295000] 🔴 L1_DIRECT: #154 addr=0x1086 grad=100 -> L2 FIFO (bypassing L1)
+[8295000] 🟢 L3_DRAM_WRITE: #150 addr=0x1075 value=100 (l2_fifo_count=17)
+[8305000] 🔴 L1_DIRECT: #155 addr=0x1087 grad=100 -> L2 FIFO (bypassing L1)
+[8305000] 🟢 L3_DRAM_WRITE: #151 addr=0x1076 value=100 (l2_fifo_count=17)
+[8315000] 🔴 L1_DIRECT: #156 addr=0x1088 grad=100 -> L2 FIFO (bypassing L1)
+[8315000] 🟢 L3_DRAM_WRITE: #152 addr=0x1077 value=100 (l2_fifo_count=17)
+[8325000] 🔴 L1_DIRECT: #157 addr=0x1089 grad=100 -> L2 FIFO (bypassing L1)
+[8325000] 🟢 L3_DRAM_WRITE: #153 addr=0x1078 value=100 (l2_fifo_count=17)
+[8335000] 🔴 L1_DIRECT: #158 addr=0x108a grad=100 -> L2 FIFO (bypassing L1)
+[8335000] 🟢 L3_DRAM_WRITE: #154 addr=0x1079 value=100 (l2_fifo_count=17)
+[8345000] 🔴 L1_DIRECT: #159 addr=0x108b grad=100 -> L2 FIFO (bypassing L1)
+[8345000] 🟢 L3_DRAM_WRITE: #155 addr=0x107a value=100 (l2_fifo_count=17)
+[8355000] 🔴 L1_DIRECT: #160 addr=0x108c grad=100 -> L2 FIFO (bypassing L1)
+[8355000] 🟢 L3_DRAM_WRITE: #156 addr=0x107b value=100 (l2_fifo_count=17)
+[8365000] 🔴 L1_DIRECT: #161 addr=0x108d grad=100 -> L2 FIFO (bypassing L1)
+[8365000] 🟢 L3_DRAM_WRITE: #157 addr=0x107c value=100 (l2_fifo_count=17)
+[8375000] 🔴 L1_DIRECT: #162 addr=0x108e grad=100 -> L2 FIFO (bypassing L1)
+[8375000] 🟢 L3_DRAM_WRITE: #158 addr=0x107d value=100 (l2_fifo_count=17)
+[8385000] 🔴 L1_DIRECT: #163 addr=0x108f grad=100 -> L2 FIFO (bypassing L1)
+[8385000] 🟢 L3_DRAM_WRITE: #159 addr=0x107e value=100 (l2_fifo_count=17)
+[8395000] 🔴 L1_DIRECT: #164 addr=0x1090 grad=100 -> L2 FIFO (bypassing L1)
+[8395000] 🟢 L3_DRAM_WRITE: #160 addr=0x107f value=100 (l2_fifo_count=17)
+[8405000] 🔴 L1_DIRECT: #165 addr=0x1091 grad=100 -> L2 FIFO (bypassing L1)
+[8405000] 🟢 L3_DRAM_WRITE: #161 addr=0x1080 value=100 (l2_fifo_count=17)
+[8415000] 🔴 L1_DIRECT: #166 addr=0x1092 grad=100 -> L2 FIFO (bypassing L1)
+[8415000] 🟢 L3_DRAM_WRITE: #162 addr=0x1081 value=100 (l2_fifo_count=17)
+[8425000] 🔴 L1_DIRECT: #167 addr=0x1093 grad=100 -> L2 FIFO (bypassing L1)
+[8425000] 🟢 L3_DRAM_WRITE: #163 addr=0x1082 value=100 (l2_fifo_count=17)
+[8435000] 🔴 L1_DIRECT: #168 addr=0x1094 grad=100 -> L2 FIFO (bypassing L1)
+[8435000] 🟢 L3_DRAM_WRITE: #164 addr=0x1083 value=100 (l2_fifo_count=17)
+[8445000] 🔴 L1_DIRECT: #169 addr=0x1095 grad=100 -> L2 FIFO (bypassing L1)
+[8445000] 🟢 L3_DRAM_WRITE: #165 addr=0x1084 value=100 (l2_fifo_count=17)
+[8455000] 🔴 L1_DIRECT: #170 addr=0x1096 grad=100 -> L2 FIFO (bypassing L1)
+[8455000] 🟢 L3_DRAM_WRITE: #166 addr=0x1085 value=100 (l2_fifo_count=17)
+[8465000] 🔴 L1_DIRECT: #171 addr=0x1097 grad=100 -> L2 FIFO (bypassing L1)
+[8465000] 🟢 L3_DRAM_WRITE: #167 addr=0x1086 value=100 (l2_fifo_count=17)
+[8475000] 🔴 L1_DIRECT: #172 addr=0x1098 grad=100 -> L2 FIFO (bypassing L1)
+[8475000] 🟢 L3_DRAM_WRITE: #168 addr=0x1087 value=100 (l2_fifo_count=17)
+[8485000] 🔴 L1_DIRECT: #173 addr=0x1099 grad=100 -> L2 FIFO (bypassing L1)
+[8485000] 🟢 L3_DRAM_WRITE: #169 addr=0x1088 value=100 (l2_fifo_count=17)
+[8495000] 🔴 L1_DIRECT: #174 addr=0x109a grad=100 -> L2 FIFO (bypassing L1)
+[8495000] 🟢 L3_DRAM_WRITE: #170 addr=0x1089 value=100 (l2_fifo_count=17)
+[8505000] 🔴 L1_DIRECT: #175 addr=0x109b grad=100 -> L2 FIFO (bypassing L1)
+[8505000] 🟢 L3_DRAM_WRITE: #171 addr=0x108a value=100 (l2_fifo_count=17)
+[8515000] 🔴 L1_DIRECT: #176 addr=0x109c grad=100 -> L2 FIFO (bypassing L1)
+[8515000] 🟢 L3_DRAM_WRITE: #172 addr=0x108b value=100 (l2_fifo_count=17)
+[8525000] 🔴 L1_DIRECT: #177 addr=0x109d grad=100 -> L2 FIFO (bypassing L1)
+[8525000] 🟢 L3_DRAM_WRITE: #173 addr=0x108c value=100 (l2_fifo_count=17)
+[8535000] 🔴 L1_DIRECT: #178 addr=0x109e grad=100 -> L2 FIFO (bypassing L1)
+[8535000] 🟢 L3_DRAM_WRITE: #174 addr=0x108d value=100 (l2_fifo_count=17)
+[8545000] 🔴 L1_DIRECT: #179 addr=0x109f grad=100 -> L2 FIFO (bypassing L1)
+[8545000] 🟢 L3_DRAM_WRITE: #175 addr=0x108e value=100 (l2_fifo_count=17)
+[8555000] 🔴 L1_DIRECT: #180 addr=0x10a0 grad=100 -> L2 FIFO (bypassing L1)
+[8555000] 🟢 L3_DRAM_WRITE: #176 addr=0x108f value=100 (l2_fifo_count=17)
+[8565000] 🔴 L1_DIRECT: #181 addr=0x10a1 grad=100 -> L2 FIFO (bypassing L1)
+[8565000] 🟢 L3_DRAM_WRITE: #177 addr=0x1090 value=100 (l2_fifo_count=17)
+[8575000] 🔴 L1_DIRECT: #182 addr=0x10a2 grad=100 -> L2 FIFO (bypassing L1)
+[8575000] 🟢 L3_DRAM_WRITE: #178 addr=0x1091 value=100 (l2_fifo_count=17)
+[8585000] 🔴 L1_DIRECT: #183 addr=0x10a3 grad=100 -> L2 FIFO (bypassing L1)
+[8585000] 🟢 L3_DRAM_WRITE: #179 addr=0x1092 value=100 (l2_fifo_count=17)
+[8595000] 🔴 L1_DIRECT: #184 addr=0x10a4 grad=100 -> L2 FIFO (bypassing L1)
+[8595000] 🟢 L3_DRAM_WRITE: #180 addr=0x1093 value=100 (l2_fifo_count=17)
+[8605000] 🔴 L1_DIRECT: #185 addr=0x10a5 grad=100 -> L2 FIFO (bypassing L1)
+[8605000] 🟢 L3_DRAM_WRITE: #181 addr=0x1094 value=100 (l2_fifo_count=17)
+[8615000] 🔴 L1_DIRECT: #186 addr=0x10a6 grad=100 -> L2 FIFO (bypassing L1)
+[8615000] 🟢 L3_DRAM_WRITE: #182 addr=0x1095 value=100 (l2_fifo_count=17)
+[8625000] 🔴 L1_DIRECT: #187 addr=0x10a7 grad=100 -> L2 FIFO (bypassing L1)
+[8625000] 🟢 L3_DRAM_WRITE: #183 addr=0x1096 value=100 (l2_fifo_count=17)
+[8635000] 🔴 L1_DIRECT: #188 addr=0x10a8 grad=100 -> L2 FIFO (bypassing L1)
+[8635000] 🟢 L3_DRAM_WRITE: #184 addr=0x1097 value=100 (l2_fifo_count=17)
+[8645000] 🔴 L1_DIRECT: #189 addr=0x10a9 grad=100 -> L2 FIFO (bypassing L1)
+[8645000] 🟢 L3_DRAM_WRITE: #185 addr=0x1098 value=100 (l2_fifo_count=17)
+[8655000] 🔴 L1_DIRECT: #190 addr=0x10aa grad=100 -> L2 FIFO (bypassing L1)
+[8655000] 🟢 L3_DRAM_WRITE: #186 addr=0x1099 value=100 (l2_fifo_count=17)
+[8665000] 🔴 L1_DIRECT: #191 addr=0x10ab grad=100 -> L2 FIFO (bypassing L1)
+[8665000] 🟢 L3_DRAM_WRITE: #187 addr=0x109a value=100 (l2_fifo_count=17)
+[8675000] 🔴 L1_DIRECT: #192 addr=0x10ac grad=100 -> L2 FIFO (bypassing L1)
+[8675000] 🟢 L3_DRAM_WRITE: #188 addr=0x109b value=100 (l2_fifo_count=17)
+[8685000] 🔴 L1_DIRECT: #193 addr=0x10ad grad=100 -> L2 FIFO (bypassing L1)
+[8685000] 🟢 L3_DRAM_WRITE: #189 addr=0x109c value=100 (l2_fifo_count=17)
+[8695000] 🔴 L1_DIRECT: #194 addr=0x10ae grad=100 -> L2 FIFO (bypassing L1)
+[8695000] 🟢 L3_DRAM_WRITE: #190 addr=0x109d value=100 (l2_fifo_count=17)
+[8705000] 🔴 L1_DIRECT: #195 addr=0x10af grad=100 -> L2 FIFO (bypassing L1)
+[8705000] 🟢 L3_DRAM_WRITE: #191 addr=0x109e value=100 (l2_fifo_count=17)
+[8715000] 🔴 L1_DIRECT: #196 addr=0x10b0 grad=100 -> L2 FIFO (bypassing L1)
+[8715000] 🟢 L3_DRAM_WRITE: #192 addr=0x109f value=100 (l2_fifo_count=17)
+[8725000] 🔴 L1_DIRECT: #197 addr=0x10b1 grad=100 -> L2 FIFO (bypassing L1)
+[8725000] 🟢 L3_DRAM_WRITE: #193 addr=0x10a0 value=100 (l2_fifo_count=17)
+[8735000] 🔴 L1_DIRECT: #198 addr=0x10b2 grad=100 -> L2 FIFO (bypassing L1)
+[8735000] 🟢 L3_DRAM_WRITE: #194 addr=0x10a1 value=100 (l2_fifo_count=17)
+[8745000] 🔴 L1_DIRECT: #199 addr=0x10b3 grad=100 -> L2 FIFO (bypassing L1)
+[8745000] 🟢 L3_DRAM_WRITE: #195 addr=0x10a2 value=100 (l2_fifo_count=17)
+[8755000] 🔴 L1_DIRECT: #200 addr=0x10b4 grad=100 -> L2 FIFO (bypassing L1)
+[8755000] 🟢 L3_DRAM_WRITE: #196 addr=0x10a3 value=100 (l2_fifo_count=17)
+[8765000] 🔴 L1_DIRECT: #201 addr=0x10b5 grad=100 -> L2 FIFO (bypassing L1)
+[8765000] 🟢 L3_DRAM_WRITE: #197 addr=0x10a4 value=100 (l2_fifo_count=17)
+[8775000] 🔴 L1_DIRECT: #202 addr=0x10b6 grad=100 -> L2 FIFO (bypassing L1)
+[8775000] 🟢 L3_DRAM_WRITE: #198 addr=0x10a5 value=100 (l2_fifo_count=17)
+[8785000] 🔴 L1_DIRECT: #203 addr=0x10b7 grad=100 -> L2 FIFO (bypassing L1)
+[8785000] 🟢 L3_DRAM_WRITE: #199 addr=0x10a6 value=100 (l2_fifo_count=17)
+[8795000] 🔴 L1_DIRECT: #204 addr=0x10b8 grad=100 -> L2 FIFO (bypassing L1)
+[8795000] 🟢 L3_DRAM_WRITE: #200 addr=0x10a7 value=100 (l2_fifo_count=17)
+[8805000] 🔴 L1_DIRECT: #205 addr=0x10b9 grad=100 -> L2 FIFO (bypassing L1)
+[8805000] 🟢 L3_DRAM_WRITE: #201 addr=0x10a8 value=100 (l2_fifo_count=17)
+[8815000] 🔴 L1_DIRECT: #206 addr=0x10ba grad=100 -> L2 FIFO (bypassing L1)
+[8815000] 🟢 L3_DRAM_WRITE: #202 addr=0x10a9 value=100 (l2_fifo_count=17)
+[8825000] 🔴 L1_DIRECT: #207 addr=0x10bb grad=100 -> L2 FIFO (bypassing L1)
+[8825000] 🟢 L3_DRAM_WRITE: #203 addr=0x10aa value=100 (l2_fifo_count=17)
+[8835000] 🔴 L1_DIRECT: #208 addr=0x10bc grad=100 -> L2 FIFO (bypassing L1)
+[8835000] 🟢 L3_DRAM_WRITE: #204 addr=0x10ab value=100 (l2_fifo_count=17)
+[8845000] 🔴 L1_DIRECT: #209 addr=0x10bd grad=100 -> L2 FIFO (bypassing L1)
+[8845000] 🟢 L3_DRAM_WRITE: #205 addr=0x10ac value=100 (l2_fifo_count=17)
+[8855000] 🔴 L1_DIRECT: #210 addr=0x10be grad=100 -> L2 FIFO (bypassing L1)
+[8855000] 🟢 L3_DRAM_WRITE: #206 addr=0x10ad value=100 (l2_fifo_count=17)
+[8865000] 🔴 L1_DIRECT: #211 addr=0x10bf grad=100 -> L2 FIFO (bypassing L1)
+[8865000] 🟢 L3_DRAM_WRITE: #207 addr=0x10ae value=100 (l2_fifo_count=17)
+[8875000] 🔴 L1_DIRECT: #212 addr=0x10c0 grad=100 -> L2 FIFO (bypassing L1)
+[8875000] 🟢 L3_DRAM_WRITE: #208 addr=0x10af value=100 (l2_fifo_count=17)
+[8885000] 🔴 L1_DIRECT: #213 addr=0x10c1 grad=100 -> L2 FIFO (bypassing L1)
+[8885000] 🟢 L3_DRAM_WRITE: #209 addr=0x10b0 value=100 (l2_fifo_count=17)
+[8895000] 🔴 L1_DIRECT: #214 addr=0x10c2 grad=100 -> L2 FIFO (bypassing L1)
+[8895000] 🟢 L3_DRAM_WRITE: #210 addr=0x10b1 value=100 (l2_fifo_count=17)
+[8905000] 🔴 L1_DIRECT: #215 addr=0x10c3 grad=100 -> L2 FIFO (bypassing L1)
+[8905000] 🟢 L3_DRAM_WRITE: #211 addr=0x10b2 value=100 (l2_fifo_count=17)
+[8915000] 🔴 L1_DIRECT: #216 addr=0x10c4 grad=100 -> L2 FIFO (bypassing L1)
+[8915000] 🟢 L3_DRAM_WRITE: #212 addr=0x10b3 value=100 (l2_fifo_count=17)
+[8925000] 🔴 L1_DIRECT: #217 addr=0x10c5 grad=100 -> L2 FIFO (bypassing L1)
+[8925000] 🟢 L3_DRAM_WRITE: #213 addr=0x10b4 value=100 (l2_fifo_count=17)
+[8935000] 🔴 L1_DIRECT: #218 addr=0x10c6 grad=100 -> L2 FIFO (bypassing L1)
+[8935000] 🟢 L3_DRAM_WRITE: #214 addr=0x10b5 value=100 (l2_fifo_count=17)
+[8945000] 🔴 L1_DIRECT: #219 addr=0x10c7 grad=100 -> L2 FIFO (bypassing L1)
+[8945000] 🟢 L3_DRAM_WRITE: #215 addr=0x10b6 value=100 (l2_fifo_count=17)
+[8955000] 🔴 L1_DIRECT: #220 addr=0x10c8 grad=100 -> L2 FIFO (bypassing L1)
+[8955000] 🟢 L3_DRAM_WRITE: #216 addr=0x10b7 value=100 (l2_fifo_count=17)
+[8965000] 🔴 L1_DIRECT: #221 addr=0x10c9 grad=100 -> L2 FIFO (bypassing L1)
+[8965000] 🟢 L3_DRAM_WRITE: #217 addr=0x10b8 value=100 (l2_fifo_count=17)
+[8975000] 🔴 L1_DIRECT: #222 addr=0x10ca grad=100 -> L2 FIFO (bypassing L1)
+[8975000] 🟢 L3_DRAM_WRITE: #218 addr=0x10b9 value=100 (l2_fifo_count=17)
+[8985000] 🔴 L1_DIRECT: #223 addr=0x10cb grad=100 -> L2 FIFO (bypassing L1)
+[8985000] 🟢 L3_DRAM_WRITE: #219 addr=0x10ba value=100 (l2_fifo_count=17)
+[8995000] 🔴 L1_DIRECT: #224 addr=0x10cc grad=100 -> L2 FIFO (bypassing L1)
+[8995000] 🟢 L3_DRAM_WRITE: #220 addr=0x10bb value=100 (l2_fifo_count=17)
+[9005000] 🔴 L1_DIRECT: #225 addr=0x10cd grad=100 -> L2 FIFO (bypassing L1)
+[9005000] 🟢 L3_DRAM_WRITE: #221 addr=0x10bc value=100 (l2_fifo_count=17)
+[9015000] 🔴 L1_DIRECT: #226 addr=0x10ce grad=100 -> L2 FIFO (bypassing L1)
+[9015000] 🟢 L3_DRAM_WRITE: #222 addr=0x10bd value=100 (l2_fifo_count=17)
+[9025000] 🔴 L1_DIRECT: #227 addr=0x10cf grad=100 -> L2 FIFO (bypassing L1)
+[9025000] 🟢 L3_DRAM_WRITE: #223 addr=0x10be value=100 (l2_fifo_count=17)
+[9035000] 🔴 L1_DIRECT: #228 addr=0x10d0 grad=100 -> L2 FIFO (bypassing L1)
+[9035000] 🟢 L3_DRAM_WRITE: #224 addr=0x10bf value=100 (l2_fifo_count=17)
+[9045000] 🔴 L1_DIRECT: #229 addr=0x10d1 grad=100 -> L2 FIFO (bypassing L1)
+[9045000] 🟢 L3_DRAM_WRITE: #225 addr=0x10c0 value=100 (l2_fifo_count=17)
+[9055000] 🔴 L1_DIRECT: #230 addr=0x10d2 grad=100 -> L2 FIFO (bypassing L1)
+[9055000] 🟢 L3_DRAM_WRITE: #226 addr=0x10c1 value=100 (l2_fifo_count=17)
+[9065000] 🔴 L1_DIRECT: #231 addr=0x10d3 grad=100 -> L2 FIFO (bypassing L1)
+[9065000] 🟢 L3_DRAM_WRITE: #227 addr=0x10c2 value=100 (l2_fifo_count=17)
+[9075000] 🔴 L1_DIRECT: #232 addr=0x10d4 grad=100 -> L2 FIFO (bypassing L1)
+[9075000] 🟢 L3_DRAM_WRITE: #228 addr=0x10c3 value=100 (l2_fifo_count=17)
+[9085000] 🔴 L1_DIRECT: #233 addr=0x10d5 grad=100 -> L2 FIFO (bypassing L1)
+[9085000] 🟢 L3_DRAM_WRITE: #229 addr=0x10c4 value=100 (l2_fifo_count=17)
+[9095000] 🔴 L1_DIRECT: #234 addr=0x10d6 grad=100 -> L2 FIFO (bypassing L1)
+[9095000] 🟢 L3_DRAM_WRITE: #230 addr=0x10c5 value=100 (l2_fifo_count=17)
+[9105000] 🔴 L1_DIRECT: #235 addr=0x10d7 grad=100 -> L2 FIFO (bypassing L1)
+[9105000] 🟢 L3_DRAM_WRITE: #231 addr=0x10c6 value=100 (l2_fifo_count=17)
+[9115000] 🔴 L1_DIRECT: #236 addr=0x10d8 grad=100 -> L2 FIFO (bypassing L1)
+[9115000] 🟢 L3_DRAM_WRITE: #232 addr=0x10c7 value=100 (l2_fifo_count=17)
+[9125000] 🔴 L1_DIRECT: #237 addr=0x10d9 grad=100 -> L2 FIFO (bypassing L1)
+[9125000] 🟢 L3_DRAM_WRITE: #233 addr=0x10c8 value=100 (l2_fifo_count=17)
+[9135000] 🔴 L1_DIRECT: #238 addr=0x10da grad=100 -> L2 FIFO (bypassing L1)
+[9135000] 🟢 L3_DRAM_WRITE: #234 addr=0x10c9 value=100 (l2_fifo_count=17)
+[9145000] 🔴 L1_DIRECT: #239 addr=0x10db grad=100 -> L2 FIFO (bypassing L1)
+[9145000] 🟢 L3_DRAM_WRITE: #235 addr=0x10ca value=100 (l2_fifo_count=17)
+[9155000] 🔴 L1_DIRECT: #240 addr=0x10dc grad=100 -> L2 FIFO (bypassing L1)
+[9155000] 🟢 L3_DRAM_WRITE: #236 addr=0x10cb value=100 (l2_fifo_count=17)
+[9165000] 🔴 L1_DIRECT: #241 addr=0x10dd grad=100 -> L2 FIFO (bypassing L1)
+[9165000] 🟢 L3_DRAM_WRITE: #237 addr=0x10cc value=100 (l2_fifo_count=17)
+[9175000] 🔴 L1_DIRECT: #242 addr=0x10de grad=100 -> L2 FIFO (bypassing L1)
+[9175000] 🟢 L3_DRAM_WRITE: #238 addr=0x10cd value=100 (l2_fifo_count=17)
+[9185000] 🔴 L1_DIRECT: #243 addr=0x10df grad=100 -> L2 FIFO (bypassing L1)
+[9185000] 🟢 L3_DRAM_WRITE: #239 addr=0x10ce value=100 (l2_fifo_count=17)
+[9195000] 🔴 L1_DIRECT: #244 addr=0x10e0 grad=100 -> L2 FIFO (bypassing L1)
+[9195000] 🟢 L3_DRAM_WRITE: #240 addr=0x10cf value=100 (l2_fifo_count=17)
+[9205000] 🔴 L1_DIRECT: #245 addr=0x10e1 grad=100 -> L2 FIFO (bypassing L1)
+[9205000] 🟢 L3_DRAM_WRITE: #241 addr=0x10d0 value=100 (l2_fifo_count=17)
+[9215000] 🔴 L1_DIRECT: #246 addr=0x10e2 grad=100 -> L2 FIFO (bypassing L1)
+[9215000] 🟢 L3_DRAM_WRITE: #242 addr=0x10d1 value=100 (l2_fifo_count=17)
+[9225000] 🔴 L1_DIRECT: #247 addr=0x10e3 grad=100 -> L2 FIFO (bypassing L1)
+[9225000] 🟢 L3_DRAM_WRITE: #243 addr=0x10d2 value=100 (l2_fifo_count=17)
+[9235000] 🔴 L1_DIRECT: #248 addr=0x10e4 grad=100 -> L2 FIFO (bypassing L1)
+[9235000] 🟢 L3_DRAM_WRITE: #244 addr=0x10d3 value=100 (l2_fifo_count=17)
+[9245000] 🔴 L1_DIRECT: #249 addr=0x10e5 grad=100 -> L2 FIFO (bypassing L1)
+[9245000] 🟢 L3_DRAM_WRITE: #245 addr=0x10d4 value=100 (l2_fifo_count=17)
+[9255000] 🔴 L1_DIRECT: #250 addr=0x10e6 grad=100 -> L2 FIFO (bypassing L1)
+[9255000] 🟢 L3_DRAM_WRITE: #246 addr=0x10d5 value=100 (l2_fifo_count=17)
+[9265000] 🔴 L1_DIRECT: #251 addr=0x10e7 grad=100 -> L2 FIFO (bypassing L1)
+[9265000] 🟢 L3_DRAM_WRITE: #247 addr=0x10d6 value=100 (l2_fifo_count=17)
+[9275000] 🔴 L1_DIRECT: #252 addr=0x10e8 grad=100 -> L2 FIFO (bypassing L1)
+[9275000] 🟢 L3_DRAM_WRITE: #248 addr=0x10d7 value=100 (l2_fifo_count=17)
+[9285000] 🔴 L1_DIRECT: #253 addr=0x10e9 grad=100 -> L2 FIFO (bypassing L1)
+[9285000] 🟢 L3_DRAM_WRITE: #249 addr=0x10d8 value=100 (l2_fifo_count=17)
+[9295000] 🔴 L1_DIRECT: #254 addr=0x10ea grad=100 -> L2 FIFO (bypassing L1)
+[9295000] 🟢 L3_DRAM_WRITE: #250 addr=0x10d9 value=100 (l2_fifo_count=17)
+[9305000] 🔴 L1_DIRECT: #255 addr=0x10eb grad=100 -> L2 FIFO (bypassing L1)
+[9305000] 🟢 L3_DRAM_WRITE: #251 addr=0x10da value=100 (l2_fifo_count=17)
+[9315000] 🔴 L1_DIRECT: #256 addr=0x10ec grad=100 -> L2 FIFO (bypassing L1)
+[9315000] 🟢 L3_DRAM_WRITE: #252 addr=0x10db value=100 (l2_fifo_count=17)
+[9325000] 🔴 L1_DIRECT: #257 addr=0x10ed grad=100 -> L2 FIFO (bypassing L1)
+[9325000] 🟢 L3_DRAM_WRITE: #253 addr=0x10dc value=100 (l2_fifo_count=17)
+[9335000] 🔴 L1_DIRECT: #258 addr=0x10ee grad=100 -> L2 FIFO (bypassing L1)
+[9335000] 🟢 L3_DRAM_WRITE: #254 addr=0x10dd value=100 (l2_fifo_count=17)
+[9345000] 🔴 L1_DIRECT: #259 addr=0x10ef grad=100 -> L2 FIFO (bypassing L1)
+[9345000] 🟢 L3_DRAM_WRITE: #255 addr=0x10de value=100 (l2_fifo_count=17)
+[9355000] 🔴 L1_DIRECT: #260 addr=0x10f0 grad=100 -> L2 FIFO (bypassing L1)
+[9355000] 🟢 L3_DRAM_WRITE: #256 addr=0x10df value=100 (l2_fifo_count=17)
+[9365000] 🔴 L1_DIRECT: #261 addr=0x10f1 grad=100 -> L2 FIFO (bypassing L1)
+[9365000] 🟢 L3_DRAM_WRITE: #257 addr=0x10e0 value=100 (l2_fifo_count=17)
+[9375000] 🔴 L1_DIRECT: #262 addr=0x10f2 grad=100 -> L2 FIFO (bypassing L1)
+[9375000] 🟢 L3_DRAM_WRITE: #258 addr=0x10e1 value=100 (l2_fifo_count=17)
+[9385000] 🔴 L1_DIRECT: #263 addr=0x10f3 grad=100 -> L2 FIFO (bypassing L1)
+[9385000] 🟢 L3_DRAM_WRITE: #259 addr=0x10e2 value=100 (l2_fifo_count=17)
+[9395000] 🔴 L1_DIRECT: #264 addr=0x10f4 grad=100 -> L2 FIFO (bypassing L1)
+[9395000] 🟢 L3_DRAM_WRITE: #260 addr=0x10e3 value=100 (l2_fifo_count=17)
+[9405000] 🔴 L1_DIRECT: #265 addr=0x10f5 grad=100 -> L2 FIFO (bypassing L1)
+[9405000] 🟢 L3_DRAM_WRITE: #261 addr=0x10e4 value=100 (l2_fifo_count=17)
+[9415000] 🔴 L1_DIRECT: #266 addr=0x10f6 grad=100 -> L2 FIFO (bypassing L1)
+[9415000] 🟢 L3_DRAM_WRITE: #262 addr=0x10e5 value=100 (l2_fifo_count=17)
+[9425000] 🔴 L1_DIRECT: #267 addr=0x10f7 grad=100 -> L2 FIFO (bypassing L1)
+[9425000] 🟢 L3_DRAM_WRITE: #263 addr=0x10e6 value=100 (l2_fifo_count=17)
+[9435000] 🔴 L1_DIRECT: #268 addr=0x10f8 grad=100 -> L2 FIFO (bypassing L1)
+[9435000] 🟢 L3_DRAM_WRITE: #264 addr=0x10e7 value=100 (l2_fifo_count=17)
+[9445000] 🔴 L1_DIRECT: #269 addr=0x10f9 grad=100 -> L2 FIFO (bypassing L1)
+[9445000] 🟢 L3_DRAM_WRITE: #265 addr=0x10e8 value=100 (l2_fifo_count=17)
+[9455000] 🔴 L1_DIRECT: #270 addr=0x10fa grad=100 -> L2 FIFO (bypassing L1)
+[9455000] 🟢 L3_DRAM_WRITE: #266 addr=0x10e9 value=100 (l2_fifo_count=17)
+[9465000] 🔴 L1_DIRECT: #271 addr=0x10fb grad=100 -> L2 FIFO (bypassing L1)
+[9465000] 🟢 L3_DRAM_WRITE: #267 addr=0x10ea value=100 (l2_fifo_count=17)
+[9475000] 🔴 L1_DIRECT: #272 addr=0x10fc grad=100 -> L2 FIFO (bypassing L1)
+[9475000] 🟢 L3_DRAM_WRITE: #268 addr=0x10eb value=100 (l2_fifo_count=17)
+[9485000] 🔴 L1_DIRECT: #273 addr=0x10fd grad=100 -> L2 FIFO (bypassing L1)
+[9485000] 🟢 L3_DRAM_WRITE: #269 addr=0x10ec value=100 (l2_fifo_count=17)
+[9495000] 🔴 L1_DIRECT: #274 addr=0x10fe grad=100 -> L2 FIFO (bypassing L1)
+[9495000] 🟢 L3_DRAM_WRITE: #270 addr=0x10ed value=100 (l2_fifo_count=17)
+[9505000] 🔴 L1_DIRECT: #275 addr=0x10ff grad=100 -> L2 FIFO (bypassing L1)
+[9505000] 🟢 L3_DRAM_WRITE: #271 addr=0x10ee value=100 (l2_fifo_count=17)
+[9515000] 🔴 L1_DIRECT: #276 addr=0x1100 grad=100 -> L2 FIFO (bypassing L1)
+[9515000] 🟢 L3_DRAM_WRITE: #272 addr=0x10ef value=100 (l2_fifo_count=17)
+[9525000] 🔴 L1_DIRECT: #277 addr=0x1101 grad=100 -> L2 FIFO (bypassing L1)
+[9525000] 🟢 L3_DRAM_WRITE: #273 addr=0x10f0 value=100 (l2_fifo_count=17)
+[9535000] 🔴 L1_DIRECT: #278 addr=0x1102 grad=100 -> L2 FIFO (bypassing L1)
+[9535000] 🟢 L3_DRAM_WRITE: #274 addr=0x10f1 value=100 (l2_fifo_count=17)
+[9545000] 🔴 L1_DIRECT: #279 addr=0x1103 grad=100 -> L2 FIFO (bypassing L1)
+[9545000] 🟢 L3_DRAM_WRITE: #275 addr=0x10f2 value=100 (l2_fifo_count=17)
+[9555000] 🔴 L1_DIRECT: #280 addr=0x1104 grad=100 -> L2 FIFO (bypassing L1)
+[9555000] 🟢 L3_DRAM_WRITE: #276 addr=0x10f3 value=100 (l2_fifo_count=17)
+[9565000] 🔴 L1_DIRECT: #281 addr=0x1105 grad=100 -> L2 FIFO (bypassing L1)
+[9565000] 🟢 L3_DRAM_WRITE: #277 addr=0x10f4 value=100 (l2_fifo_count=17)
+[9575000] 🔴 L1_DIRECT: #282 addr=0x1106 grad=100 -> L2 FIFO (bypassing L1)
+[9575000] 🟢 L3_DRAM_WRITE: #278 addr=0x10f5 value=100 (l2_fifo_count=17)
+[9585000] 🔴 L1_DIRECT: #283 addr=0x1107 grad=100 -> L2 FIFO (bypassing L1)
+[9585000] 🟢 L3_DRAM_WRITE: #279 addr=0x10f6 value=100 (l2_fifo_count=17)
+[9595000] 🔴 L1_DIRECT: #284 addr=0x1108 grad=100 -> L2 FIFO (bypassing L1)
+[9595000] 🟢 L3_DRAM_WRITE: #280 addr=0x10f7 value=100 (l2_fifo_count=17)
+[9605000] 🔴 L1_DIRECT: #285 addr=0x1109 grad=100 -> L2 FIFO (bypassing L1)
+[9605000] 🟢 L3_DRAM_WRITE: #281 addr=0x10f8 value=100 (l2_fifo_count=17)
+[9615000] 🔴 L1_DIRECT: #286 addr=0x110a grad=100 -> L2 FIFO (bypassing L1)
+[9615000] 🟢 L3_DRAM_WRITE: #282 addr=0x10f9 value=100 (l2_fifo_count=17)
+[9625000] 🔴 L1_DIRECT: #287 addr=0x110b grad=100 -> L2 FIFO (bypassing L1)
+[9625000] 🟢 L3_DRAM_WRITE: #283 addr=0x10fa value=100 (l2_fifo_count=17)
+[9635000] 🔴 L1_DIRECT: #288 addr=0x110c grad=100 -> L2 FIFO (bypassing L1)
+[9635000] 🟢 L3_DRAM_WRITE: #284 addr=0x10fb value=100 (l2_fifo_count=17)
+[9645000] 🔴 L1_DIRECT: #289 addr=0x110d grad=100 -> L2 FIFO (bypassing L1)
+[9645000] 🟢 L3_DRAM_WRITE: #285 addr=0x10fc value=100 (l2_fifo_count=17)
+[9655000] 🔴 L1_DIRECT: #290 addr=0x110e grad=100 -> L2 FIFO (bypassing L1)
+[9655000] 🟢 L3_DRAM_WRITE: #286 addr=0x10fd value=100 (l2_fifo_count=17)
+[9665000] 🔴 L1_DIRECT: #291 addr=0x110f grad=100 -> L2 FIFO (bypassing L1)
+[9665000] 🟢 L3_DRAM_WRITE: #287 addr=0x10fe value=100 (l2_fifo_count=17)
+[9675000] 🔴 L1_DIRECT: #292 addr=0x1110 grad=100 -> L2 FIFO (bypassing L1)
+[9675000] 🟢 L3_DRAM_WRITE: #288 addr=0x10ff value=100 (l2_fifo_count=17)
+[9685000] 🔴 L1_DIRECT: #293 addr=0x1111 grad=100 -> L2 FIFO (bypassing L1)
+[9685000] 🟢 L3_DRAM_WRITE: #289 addr=0x1100 value=100 (l2_fifo_count=17)
+[9695000] 🔴 L1_DIRECT: #294 addr=0x1112 grad=100 -> L2 FIFO (bypassing L1)
+[9695000] 🟢 L3_DRAM_WRITE: #290 addr=0x1101 value=100 (l2_fifo_count=17)
+[9705000] 🔴 L1_DIRECT: #295 addr=0x1113 grad=100 -> L2 FIFO (bypassing L1)
+[9705000] 🟢 L3_DRAM_WRITE: #291 addr=0x1102 value=100 (l2_fifo_count=17)
+[9715000] 🔴 L1_DIRECT: #296 addr=0x1114 grad=100 -> L2 FIFO (bypassing L1)
+[9715000] 🟢 L3_DRAM_WRITE: #292 addr=0x1103 value=100 (l2_fifo_count=17)
+[9725000] 🔴 L1_DIRECT: #297 addr=0x1115 grad=100 -> L2 FIFO (bypassing L1)
+[9725000] 🟢 L3_DRAM_WRITE: #293 addr=0x1104 value=100 (l2_fifo_count=17)
+[9735000] 🔴 L1_DIRECT: #298 addr=0x1116 grad=100 -> L2 FIFO (bypassing L1)
+[9735000] 🟢 L3_DRAM_WRITE: #294 addr=0x1105 value=100 (l2_fifo_count=17)
+[9745000] 🔴 L1_DIRECT: #299 addr=0x1117 grad=100 -> L2 FIFO (bypassing L1)
+[9745000] 🟢 L3_DRAM_WRITE: #295 addr=0x1106 value=100 (l2_fifo_count=17)
+[9755000] 🔴 L1_DIRECT: #300 addr=0x1118 grad=100 -> L2 FIFO (bypassing L1)
+[9755000] 🟢 L3_DRAM_WRITE: #296 addr=0x1107 value=100 (l2_fifo_count=17)
+[9765000] 🔴 L1_DIRECT: #301 addr=0x1119 grad=100 -> L2 FIFO (bypassing L1)
+[9765000] 🟢 L3_DRAM_WRITE: #297 addr=0x1108 value=100 (l2_fifo_count=17)
+[9775000] 🔴 L1_DIRECT: #302 addr=0x111a grad=100 -> L2 FIFO (bypassing L1)
+[9775000] 🟢 L3_DRAM_WRITE: #298 addr=0x1109 value=100 (l2_fifo_count=17)
+[9785000] 🔴 L1_DIRECT: #303 addr=0x111b grad=100 -> L2 FIFO (bypassing L1)
+[9785000] 🟢 L3_DRAM_WRITE: #299 addr=0x110a value=100 (l2_fifo_count=17)
+[9795000] 🔴 L1_DIRECT: #304 addr=0x111c grad=100 -> L2 FIFO (bypassing L1)
+[9795000] 🟢 L3_DRAM_WRITE: #300 addr=0x110b value=100 (l2_fifo_count=17)
+[9805000] 🔴 L1_DIRECT: #305 addr=0x111d grad=100 -> L2 FIFO (bypassing L1)
+[9805000] 🟢 L3_DRAM_WRITE: #301 addr=0x110c value=100 (l2_fifo_count=17)
+[9815000] 🔴 L1_DIRECT: #306 addr=0x111e grad=100 -> L2 FIFO (bypassing L1)
+[9815000] 🟢 L3_DRAM_WRITE: #302 addr=0x110d value=100 (l2_fifo_count=17)
+[9825000] 🔴 L1_DIRECT: #307 addr=0x111f grad=100 -> L2 FIFO (bypassing L1)
+[9825000] 🟢 L3_DRAM_WRITE: #303 addr=0x110e value=100 (l2_fifo_count=17)
+[9835000] 🔴 L1_DIRECT: #308 addr=0x1120 grad=100 -> L2 FIFO (bypassing L1)
+[9835000] 🟢 L3_DRAM_WRITE: #304 addr=0x110f value=100 (l2_fifo_count=17)
+[9845000] 🔴 L1_DIRECT: #309 addr=0x1121 grad=100 -> L2 FIFO (bypassing L1)
+[9845000] 🟢 L3_DRAM_WRITE: #305 addr=0x1110 value=100 (l2_fifo_count=17)
+[9855000] 🔴 L1_DIRECT: #310 addr=0x1122 grad=100 -> L2 FIFO (bypassing L1)
+[9855000] 🟢 L3_DRAM_WRITE: #306 addr=0x1111 value=100 (l2_fifo_count=17)
+[9865000] 🔴 L1_DIRECT: #311 addr=0x1123 grad=100 -> L2 FIFO (bypassing L1)
+[9865000] 🟢 L3_DRAM_WRITE: #307 addr=0x1112 value=100 (l2_fifo_count=17)
+[9875000] 🔴 L1_DIRECT: #312 addr=0x1124 grad=100 -> L2 FIFO (bypassing L1)
+[9875000] 🟢 L3_DRAM_WRITE: #308 addr=0x1113 value=100 (l2_fifo_count=17)
+[9885000] 🔴 L1_DIRECT: #313 addr=0x1125 grad=100 -> L2 FIFO (bypassing L1)
+[9885000] 🟢 L3_DRAM_WRITE: #309 addr=0x1114 value=100 (l2_fifo_count=17)
+[9895000] 🔴 L1_DIRECT: #314 addr=0x1126 grad=100 -> L2 FIFO (bypassing L1)
+[9895000] 🟢 L3_DRAM_WRITE: #310 addr=0x1115 value=100 (l2_fifo_count=17)
+[9905000] 🔴 L1_DIRECT: #315 addr=0x1127 grad=100 -> L2 FIFO (bypassing L1)
+[9905000] 🟢 L3_DRAM_WRITE: #311 addr=0x1116 value=100 (l2_fifo_count=17)
+[9915000] 🔴 L1_DIRECT: #316 addr=0x1128 grad=100 -> L2 FIFO (bypassing L1)
+[9915000] 🟢 L3_DRAM_WRITE: #312 addr=0x1117 value=100 (l2_fifo_count=17)
+[9925000] 🔴 L1_DIRECT: #317 addr=0x1129 grad=100 -> L2 FIFO (bypassing L1)
+[9925000] 🟢 L3_DRAM_WRITE: #313 addr=0x1118 value=100 (l2_fifo_count=17)
+[9935000] 🔴 L1_DIRECT: #318 addr=0x112a grad=100 -> L2 FIFO (bypassing L1)
+[9935000] 🟢 L3_DRAM_WRITE: #314 addr=0x1119 value=100 (l2_fifo_count=17)
+[9945000] 🔴 L1_DIRECT: #319 addr=0x112b grad=100 -> L2 FIFO (bypassing L1)
+[9945000] 🟢 L3_DRAM_WRITE: #315 addr=0x111a value=100 (l2_fifo_count=17)
+[9955000] 🔴 L1_DIRECT: #320 addr=0x112c grad=100 -> L2 FIFO (bypassing L1)
+[9955000] 🟢 L3_DRAM_WRITE: #316 addr=0x111b value=100 (l2_fifo_count=17)
+[9965000] 🔴 L1_DIRECT: #321 addr=0x112d grad=100 -> L2 FIFO (bypassing L1)
+[9965000] 🟢 L3_DRAM_WRITE: #317 addr=0x111c value=100 (l2_fifo_count=17)
+[9975000] 🔴 L1_DIRECT: #322 addr=0x112e grad=100 -> L2 FIFO (bypassing L1)
+[9975000] 🟢 L3_DRAM_WRITE: #318 addr=0x111d value=100 (l2_fifo_count=17)
+[9985000] 🔴 L1_DIRECT: #323 addr=0x112f grad=100 -> L2 FIFO (bypassing L1)
+[9985000] 🟢 L3_DRAM_WRITE: #319 addr=0x111e value=100 (l2_fifo_count=17)
+[9995000] 🔴 L1_DIRECT: #324 addr=0x1130 grad=100 -> L2 FIFO (bypassing L1)
+[9995000] 🟢 L3_DRAM_WRITE: #320 addr=0x111f value=100 (l2_fifo_count=17)
+[10005000] 🔴 L1_DIRECT: #325 addr=0x1131 grad=100 -> L2 FIFO (bypassing L1)
+[10005000] 🟢 L3_DRAM_WRITE: #321 addr=0x1120 value=100 (l2_fifo_count=17)
+[10015000] 🔴 L1_DIRECT: #326 addr=0x1132 grad=100 -> L2 FIFO (bypassing L1)
+[10015000] 🟢 L3_DRAM_WRITE: #322 addr=0x1121 value=100 (l2_fifo_count=17)
+[10025000] 🔴 L1_DIRECT: #327 addr=0x1133 grad=100 -> L2 FIFO (bypassing L1)
+[10025000] 🟢 L3_DRAM_WRITE: #323 addr=0x1122 value=100 (l2_fifo_count=17)
+[10035000] 🔴 L1_DIRECT: #328 addr=0x1134 grad=100 -> L2 FIFO (bypassing L1)
+[10035000] 🟢 L3_DRAM_WRITE: #324 addr=0x1123 value=100 (l2_fifo_count=17)
+[10045000] 🔴 L1_DIRECT: #329 addr=0x1135 grad=100 -> L2 FIFO (bypassing L1)
+[10045000] 🟢 L3_DRAM_WRITE: #325 addr=0x1124 value=100 (l2_fifo_count=17)
+[10055000] 🔴 L1_DIRECT: #330 addr=0x1136 grad=100 -> L2 FIFO (bypassing L1)
+[10055000] 🟢 L3_DRAM_WRITE: #326 addr=0x1125 value=100 (l2_fifo_count=17)
+[10065000] 🔴 L1_DIRECT: #331 addr=0x1137 grad=100 -> L2 FIFO (bypassing L1)
+[10065000] 🟢 L3_DRAM_WRITE: #327 addr=0x1126 value=100 (l2_fifo_count=17)
+[10075000] 🔴 L1_DIRECT: #332 addr=0x1138 grad=100 -> L2 FIFO (bypassing L1)
+[10075000] 🟢 L3_DRAM_WRITE: #328 addr=0x1127 value=100 (l2_fifo_count=17)
+[10085000] 🔴 L1_DIRECT: #333 addr=0x1139 grad=100 -> L2 FIFO (bypassing L1)
+[10085000] 🟢 L3_DRAM_WRITE: #329 addr=0x1128 value=100 (l2_fifo_count=17)
+[10095000] 🔴 L1_DIRECT: #334 addr=0x113a grad=100 -> L2 FIFO (bypassing L1)
+[10095000] 🟢 L3_DRAM_WRITE: #330 addr=0x1129 value=100 (l2_fifo_count=17)
+[10105000] 🔴 L1_DIRECT: #335 addr=0x113b grad=100 -> L2 FIFO (bypassing L1)
+[10105000] 🟢 L3_DRAM_WRITE: #331 addr=0x112a value=100 (l2_fifo_count=17)
+[10115000] 🔴 L1_DIRECT: #336 addr=0x113c grad=100 -> L2 FIFO (bypassing L1)
+[10115000] 🟢 L3_DRAM_WRITE: #332 addr=0x112b value=100 (l2_fifo_count=17)
+[10125000] 🔴 L1_DIRECT: #337 addr=0x113d grad=100 -> L2 FIFO (bypassing L1)
+[10125000] 🟢 L3_DRAM_WRITE: #333 addr=0x112c value=100 (l2_fifo_count=17)
+[10135000] 🔴 L1_DIRECT: #338 addr=0x113e grad=100 -> L2 FIFO (bypassing L1)
+[10135000] 🟢 L3_DRAM_WRITE: #334 addr=0x112d value=100 (l2_fifo_count=17)
+[10145000] 🔴 L1_DIRECT: #339 addr=0x113f grad=100 -> L2 FIFO (bypassing L1)
+[10145000] 🟢 L3_DRAM_WRITE: #335 addr=0x112e value=100 (l2_fifo_count=17)
+[10155000] 🔵 L1_EVICTION: #8 addr=0x0200 tag conflict -> victim to L2 FIFO
+[10155000] 🟢 L3_DRAM_WRITE: #336 addr=0x112f value=100 (l2_fifo_count=17)
+[10165000] 🟢 L3_DRAM_WRITE: #337 addr=0x1130 value=100 (l2_fifo_count=17)
+[10175000] 🟢 L3_DRAM_WRITE: #338 addr=0x1131 value=100 (l2_fifo_count=16)
+[10185000] 🟢 L3_DRAM_WRITE: #339 addr=0x1132 value=100 (l2_fifo_count=15)
+[10195000] 🟢 L3_DRAM_WRITE: #340 addr=0x1133 value=100 (l2_fifo_count=14)
+[10205000] 🟢 L3_DRAM_WRITE: #341 addr=0x1134 value=100 (l2_fifo_count=13)
+[10215000] 🟢 L3_DRAM_WRITE: #342 addr=0x1135 value=100 (l2_fifo_count=12)
+[10225000] 🟢 L3_DRAM_WRITE: #343 addr=0x1136 value=100 (l2_fifo_count=11)
+[10235000] 🟢 L3_DRAM_WRITE: #344 addr=0x1137 value=100 (l2_fifo_count=10)
+[10245000] 🟢 L3_DRAM_WRITE: #345 addr=0x1138 value=100 (l2_fifo_count=9)
+[10255000] 🟢 L3_DRAM_WRITE: #346 addr=0x1139 value=100 (l2_fifo_count=8)
+[10265000] 🟢 L3_DRAM_WRITE: #347 addr=0x113a value=100 (l2_fifo_count=7)
+[10275000] 🟢 L3_DRAM_WRITE: #348 addr=0x113b value=100 (l2_fifo_count=6)
+[10285000] 🟢 L3_DRAM_WRITE: #349 addr=0x113c value=100 (l2_fifo_count=5)
+[10295000] 🟢 L3_DRAM_WRITE: #350 addr=0x113d value=100 (l2_fifo_count=4)
+[10305000] 🟢 L3_DRAM_WRITE: #351 addr=0x113e value=100 (l2_fifo_count=3)
+[10315000] 🟢 L3_DRAM_WRITE: #352 addr=0x113f value=100 (l2_fifo_count=2)
+[10325000] 🟢 L3_DRAM_WRITE: #353 addr=0x00a0 value=15 (l2_fifo_count=1)
+[10475000] 🔵 L1_EVICTION: #9 addr=0x0300 tag conflict -> victim to L2 FIFO
+[10795000] 🟡 L1_ACCUM_OVERFLOW: #7 addr=0x0300 |accum| >= THRESHOLD -> L2 FIFO
+[10805000] 🟡 L1_ACCUM_OVERFLOW: #8 addr=0x0301 |accum| >= THRESHOLD -> L2 FIFO
+[10815000] 🟡 L1_ACCUM_OVERFLOW: #9 addr=0x0302 |accum| >= THRESHOLD -> L2 FIFO
+[10825000] 🟡 L1_ACCUM_OVERFLOW: #10 addr=0x0303 |accum| >= THRESHOLD -> L2 FIFO
+[10835000] 🟡 L1_ACCUM_OVERFLOW: #11 addr=0x0304 |accum| >= THRESHOLD -> L2 FIFO
+[10845000] 🟡 L1_ACCUM_OVERFLOW: #12 addr=0x0305 |accum| >= THRESHOLD -> L2 FIFO
+[10855000] 🟡 L1_ACCUM_OVERFLOW: #13 addr=0x0306 |accum| >= THRESHOLD -> L2 FIFO
+[10865000] 🟡 L1_ACCUM_OVERFLOW: #14 addr=0x0307 |accum| >= THRESHOLD -> L2 FIFO
+[10875000] 🟡 L1_ACCUM_OVERFLOW: #15 addr=0x0308 |accum| >= THRESHOLD -> L2 FIFO
+[10885000] 🟡 L1_ACCUM_OVERFLOW: #16 addr=0x0309 |accum| >= THRESHOLD -> L2 FIFO
+[10895000] 🟡 L1_ACCUM_OVERFLOW: #17 addr=0x030a |accum| >= THRESHOLD -> L2 FIFO
+[10905000] 🟡 L1_ACCUM_OVERFLOW: #18 addr=0x030b |accum| >= THRESHOLD -> L2 FIFO
+[10915000] 🟡 L1_ACCUM_OVERFLOW: #19 addr=0x030c |accum| >= THRESHOLD -> L2 FIFO
+[10925000] 🟡 L1_ACCUM_OVERFLOW: #20 addr=0x030d |accum| >= THRESHOLD -> L2 FIFO
+[10935000] 🟡 L1_ACCUM_OVERFLOW: #21 addr=0x030e |accum| >= THRESHOLD -> L2 FIFO
+[10945000] 🟡 L1_ACCUM_OVERFLOW: #22 addr=0x030f |accum| >= THRESHOLD -> L2 FIFO
+[10945000] 📦 L2_BURST_READY: fifo_count=16 >= BURST_SIZE=16, starting drain to DRAM
+[10955000] 🟡 L1_ACCUM_OVERFLOW: #23 addr=0x0310 |accum| >= THRESHOLD -> L2 FIFO
+[10955000] 🟢 L3_DRAM_WRITE: #354 addr=0x00c0 value=15 (l2_fifo_count=17)
+[10965000] 🟡 L1_ACCUM_OVERFLOW: #24 addr=0x0311 |accum| >= THRESHOLD -> L2 FIFO
+[10965000] 🟢 L3_DRAM_WRITE: #355 addr=0x0300 value=55 (l2_fifo_count=17)
+[10975000] 🟡 L1_ACCUM_OVERFLOW: #25 addr=0x0312 |accum| >= THRESHOLD -> L2 FIFO
+[10975000] 🟢 L3_DRAM_WRITE: #356 addr=0x0301 value=55 (l2_fifo_count=17)
+[10985000] 🟡 L1_ACCUM_OVERFLOW: #26 addr=0x0313 |accum| >= THRESHOLD -> L2 FIFO
+[10985000] 🟢 L3_DRAM_WRITE: #357 addr=0x0302 value=55 (l2_fifo_count=17)
+[10995000] 🟡 L1_ACCUM_OVERFLOW: #27 addr=0x0314 |accum| >= THRESHOLD -> L2 FIFO
+[10995000] 🟢 L3_DRAM_WRITE: #358 addr=0x0303 value=55 (l2_fifo_count=17)
+[11005000] 🟡 L1_ACCUM_OVERFLOW: #28 addr=0x0315 |accum| >= THRESHOLD -> L2 FIFO
+[11005000] 🟢 L3_DRAM_WRITE: #359 addr=0x0304 value=55 (l2_fifo_count=17)
+[11015000] 🟡 L1_ACCUM_OVERFLOW: #29 addr=0x0316 |accum| >= THRESHOLD -> L2 FIFO
+[11015000] 🟢 L3_DRAM_WRITE: #360 addr=0x0305 value=55 (l2_fifo_count=17)
+[11025000] 🟡 L1_ACCUM_OVERFLOW: #30 addr=0x0317 |accum| >= THRESHOLD -> L2 FIFO
+[11025000] 🟢 L3_DRAM_WRITE: #361 addr=0x0306 value=55 (l2_fifo_count=17)
+[11035000] 🟡 L1_ACCUM_OVERFLOW: #31 addr=0x0318 |accum| >= THRESHOLD -> L2 FIFO
+[11035000] 🟢 L3_DRAM_WRITE: #362 addr=0x0307 value=55 (l2_fifo_count=17)
+[11045000] 🟡 L1_ACCUM_OVERFLOW: #32 addr=0x0319 |accum| >= THRESHOLD -> L2 FIFO
+[11045000] 🟢 L3_DRAM_WRITE: #363 addr=0x0308 value=55 (l2_fifo_count=17)
+[11055000] 🟡 L1_ACCUM_OVERFLOW: #33 addr=0x031a |accum| >= THRESHOLD -> L2 FIFO
+[11055000] 🟢 L3_DRAM_WRITE: #364 addr=0x0309 value=55 (l2_fifo_count=17)
+[11065000] 🟡 L1_ACCUM_OVERFLOW: #34 addr=0x031b |accum| >= THRESHOLD -> L2 FIFO
+[11065000] 🟢 L3_DRAM_WRITE: #365 addr=0x030a value=55 (l2_fifo_count=17)
+[11075000] 🟡 L1_ACCUM_OVERFLOW: #35 addr=0x031c |accum| >= THRESHOLD -> L2 FIFO
+[11075000] 🟢 L3_DRAM_WRITE: #366 addr=0x030b value=55 (l2_fifo_count=17)
+[11085000] 🟡 L1_ACCUM_OVERFLOW: #36 addr=0x031d |accum| >= THRESHOLD -> L2 FIFO
+[11085000] 🟢 L3_DRAM_WRITE: #367 addr=0x030c value=55 (l2_fifo_count=17)
+[11095000] 🟡 L1_ACCUM_OVERFLOW: #37 addr=0x031e |accum| >= THRESHOLD -> L2 FIFO
+[11095000] 🟢 L3_DRAM_WRITE: #368 addr=0x030d value=55 (l2_fifo_count=17)
+[11105000] 🟡 L1_ACCUM_OVERFLOW: #38 addr=0x031f |accum| >= THRESHOLD -> L2 FIFO
+[11105000] 🟢 L3_DRAM_WRITE: #369 addr=0x030e value=55 (l2_fifo_count=17)
+[11115000] 🟢 L3_DRAM_WRITE: #370 addr=0x030f value=55 (l2_fifo_count=17)
+[11125000] 🟢 L3_DRAM_WRITE: #371 addr=0x0310 value=55 (l2_fifo_count=16)
+[11135000] 🟢 L3_DRAM_WRITE: #372 addr=0x0311 value=55 (l2_fifo_count=15)
+[11145000] 🟢 L3_DRAM_WRITE: #373 addr=0x0312 value=55 (l2_fifo_count=14)
+[11155000] 🟢 L3_DRAM_WRITE: #374 addr=0x0313 value=55 (l2_fifo_count=13)
+[11165000] 🟢 L3_DRAM_WRITE: #375 addr=0x0314 value=55 (l2_fifo_count=12)
+[11175000] 🟢 L3_DRAM_WRITE: #376 addr=0x0315 value=55 (l2_fifo_count=11)
+[11185000] 🟢 L3_DRAM_WRITE: #377 addr=0x0316 value=55 (l2_fifo_count=10)
+[11195000] 🟢 L3_DRAM_WRITE: #378 addr=0x0317 value=55 (l2_fifo_count=9)
+[11205000] 🟢 L3_DRAM_WRITE: #379 addr=0x0318 value=55 (l2_fifo_count=8)
+[11215000] 🟢 L3_DRAM_WRITE: #380 addr=0x0319 value=55 (l2_fifo_count=7)
+[11225000] 🟢 L3_DRAM_WRITE: #381 addr=0x031a value=55 (l2_fifo_count=6)
+[11235000] 🟢 L3_DRAM_WRITE: #382 addr=0x031b value=55 (l2_fifo_count=5)
+[11245000] 🟢 L3_DRAM_WRITE: #383 addr=0x031c value=55 (l2_fifo_count=4)
+[11255000] 🟢 L3_DRAM_WRITE: #384 addr=0x031d value=55 (l2_fifo_count=3)
+[11265000] 🟢 L3_DRAM_WRITE: #385 addr=0x031e value=55 (l2_fifo_count=2)
+[11275000] 🟢 L3_DRAM_WRITE: #386 addr=0x031f value=55 (l2_fifo_count=1)
+[11435000] 🔵 L1_EVICTION: #10 addr=0x0500 tag conflict -> victim to L2 FIFO
+[11755000] 🔵 L1_EVICTION: #11 addr=0x0600 tag conflict -> victim to L2 FIFO
+[11765000] 🔵 L1_EVICTION: #12 addr=0x0601 tag conflict -> victim to L2 FIFO
+[11775000] 🔵 L1_EVICTION: #13 addr=0x0602 tag conflict -> victim to L2 FIFO
+[11785000] 🔵 L1_EVICTION: #14 addr=0x0603 tag conflict -> victim to L2 FIFO
+[11795000] 🔵 L1_EVICTION: #15 addr=0x0604 tag conflict -> victim to L2 FIFO
+[11805000] 🔵 L1_EVICTION: #16 addr=0x0605 tag conflict -> victim to L2 FIFO
+[11815000] 🔵 L1_EVICTION: #17 addr=0x0606 tag conflict -> victim to L2 FIFO
+[11825000] 🔵 L1_EVICTION: #18 addr=0x0607 tag conflict -> victim to L2 FIFO
+[11835000] 🔵 L1_EVICTION: #19 addr=0x0608 tag conflict -> victim to L2 FIFO
+[11845000] 🔵 L1_EVICTION: #20 addr=0x0609 tag conflict -> victim to L2 FIFO
+[11855000] 🔵 L1_EVICTION: #21 addr=0x060a tag conflict -> victim to L2 FIFO
+[11865000] 🔵 L1_EVICTION: #22 addr=0x060b tag conflict -> victim to L2 FIFO
+[11875000] 🔵 L1_EVICTION: #23 addr=0x060c tag conflict -> victim to L2 FIFO
+[11885000] 🔵 L1_EVICTION: #24 addr=0x060d tag conflict -> victim to L2 FIFO
+[11895000] 🔵 L1_EVICTION: #25 addr=0x060e tag conflict -> victim to L2 FIFO
+[11905000] 🔵 L1_EVICTION: #26 addr=0x060f tag conflict -> victim to L2 FIFO
+[11905000] 📦 L2_BURST_READY: fifo_count=16 >= BURST_SIZE=16, starting drain to DRAM
+[11915000] 🔵 L1_EVICTION: #27 addr=0x0610 tag conflict -> victim to L2 FIFO
+[11915000] 🟢 L3_DRAM_WRITE: #387 addr=0x00e0 value=15 (l2_fifo_count=17)
+[11925000] 🔵 L1_EVICTION: #28 addr=0x0611 tag conflict -> victim to L2 FIFO
+[11925000] 🟢 L3_DRAM_WRITE: #388 addr=0x0100 value=40 (l2_fifo_count=17)
+[11935000] 🔵 L1_EVICTION: #29 addr=0x0612 tag conflict -> victim to L2 FIFO
+[11935000] 🟢 L3_DRAM_WRITE: #389 addr=0x0501 value=5 (l2_fifo_count=17)
+[11945000] 🔵 L1_EVICTION: #30 addr=0x0613 tag conflict -> victim to L2 FIFO
+[11945000] 🟢 L3_DRAM_WRITE: #390 addr=0x0502 value=5 (l2_fifo_count=17)
+[11955000] 🔵 L1_EVICTION: #31 addr=0x0614 tag conflict -> victim to L2 FIFO
+[11955000] 🟢 L3_DRAM_WRITE: #391 addr=0x0503 value=5 (l2_fifo_count=17)
+[11965000] 🔵 L1_EVICTION: #32 addr=0x0615 tag conflict -> victim to L2 FIFO
+[11965000] 🟢 L3_DRAM_WRITE: #392 addr=0x0504 value=5 (l2_fifo_count=17)
+[11975000] 🔵 L1_EVICTION: #33 addr=0x0616 tag conflict -> victim to L2 FIFO
+[11975000] 🟢 L3_DRAM_WRITE: #393 addr=0x0505 value=5 (l2_fifo_count=17)
+[11985000] 🔵 L1_EVICTION: #34 addr=0x0617 tag conflict -> victim to L2 FIFO
+[11985000] 🟢 L3_DRAM_WRITE: #394 addr=0x0506 value=5 (l2_fifo_count=17)
+[11995000] 🔵 L1_EVICTION: #35 addr=0x0618 tag conflict -> victim to L2 FIFO
+[11995000] 🟢 L3_DRAM_WRITE: #395 addr=0x0507 value=5 (l2_fifo_count=17)
+[12005000] 🔵 L1_EVICTION: #36 addr=0x0619 tag conflict -> victim to L2 FIFO
+[12005000] 🟢 L3_DRAM_WRITE: #396 addr=0x0508 value=5 (l2_fifo_count=17)
+[12015000] 🔵 L1_EVICTION: #37 addr=0x061a tag conflict -> victim to L2 FIFO
+[12015000] 🟢 L3_DRAM_WRITE: #397 addr=0x0509 value=5 (l2_fifo_count=17)
+[12025000] 🔵 L1_EVICTION: #38 addr=0x061b tag conflict -> victim to L2 FIFO
+[12025000] 🟢 L3_DRAM_WRITE: #398 addr=0x050a value=5 (l2_fifo_count=17)
+[12035000] 🔵 L1_EVICTION: #39 addr=0x061c tag conflict -> victim to L2 FIFO
+[12035000] 🟢 L3_DRAM_WRITE: #399 addr=0x050b value=5 (l2_fifo_count=17)
+[12045000] 🔵 L1_EVICTION: #40 addr=0x061d tag conflict -> victim to L2 FIFO
+[12045000] 🟢 L3_DRAM_WRITE: #400 addr=0x050c value=5 (l2_fifo_count=17)
+[12055000] 🔵 L1_EVICTION: #41 addr=0x061e tag conflict -> victim to L2 FIFO
+[12055000] 🟢 L3_DRAM_WRITE: #401 addr=0x050d value=5 (l2_fifo_count=17)
+[12065000] 🔵 L1_EVICTION: #42 addr=0x061f tag conflict -> victim to L2 FIFO
+[12065000] 🟢 L3_DRAM_WRITE: #402 addr=0x050e value=5 (l2_fifo_count=17)
+[12075000] 🔵 L1_EVICTION: #43 addr=0x0700 tag conflict -> victim to L2 FIFO
+[12075000] 🟢 L3_DRAM_WRITE: #403 addr=0x050f value=5 (l2_fifo_count=17)
+[12085000] 🔵 L1_EVICTION: #44 addr=0x0701 tag conflict -> victim to L2 FIFO
+[12085000] 🟢 L3_DRAM_WRITE: #404 addr=0x0510 value=5 (l2_fifo_count=17)
+[12095000] 🔵 L1_EVICTION: #45 addr=0x0702 tag conflict -> victim to L2 FIFO
+[12095000] 🟢 L3_DRAM_WRITE: #405 addr=0x0511 value=5 (l2_fifo_count=17)
+[12105000] 🔵 L1_EVICTION: #46 addr=0x0703 tag conflict -> victim to L2 FIFO
+[12105000] 🟢 L3_DRAM_WRITE: #406 addr=0x0512 value=5 (l2_fifo_count=17)
+[12115000] 🔵 L1_EVICTION: #47 addr=0x0704 tag conflict -> victim to L2 FIFO
+[12115000] 🟢 L3_DRAM_WRITE: #407 addr=0x0513 value=5 (l2_fifo_count=17)
+[12125000] 🔵 L1_EVICTION: #48 addr=0x0705 tag conflict -> victim to L2 FIFO
+[12125000] 🟢 L3_DRAM_WRITE: #408 addr=0x0514 value=5 (l2_fifo_count=17)
+[12135000] 🔵 L1_EVICTION: #49 addr=0x0706 tag conflict -> victim to L2 FIFO
+[12135000] 🟢 L3_DRAM_WRITE: #409 addr=0x0515 value=5 (l2_fifo_count=17)
+[12145000] 🔵 L1_EVICTION: #50 addr=0x0707 tag conflict -> victim to L2 FIFO
+[12145000] 🟢 L3_DRAM_WRITE: #410 addr=0x0516 value=5 (l2_fifo_count=17)
+[12155000] 🔵 L1_EVICTION: #51 addr=0x0708 tag conflict -> victim to L2 FIFO
+[12155000] 🟢 L3_DRAM_WRITE: #411 addr=0x0517 value=5 (l2_fifo_count=17)
+[12165000] 🔵 L1_EVICTION: #52 addr=0x0709 tag conflict -> victim to L2 FIFO
+[12165000] 🟢 L3_DRAM_WRITE: #412 addr=0x0518 value=5 (l2_fifo_count=17)
+[12175000] 🔵 L1_EVICTION: #53 addr=0x070a tag conflict -> victim to L2 FIFO
+[12175000] 🟢 L3_DRAM_WRITE: #413 addr=0x0519 value=5 (l2_fifo_count=17)
+[12185000] 🔵 L1_EVICTION: #54 addr=0x070b tag conflict -> victim to L2 FIFO
+[12185000] 🟢 L3_DRAM_WRITE: #414 addr=0x051a value=5 (l2_fifo_count=17)
+[12195000] 🔵 L1_EVICTION: #55 addr=0x070c tag conflict -> victim to L2 FIFO
+[12195000] 🟢 L3_DRAM_WRITE: #415 addr=0x051b value=5 (l2_fifo_count=17)
+[12205000] 🔵 L1_EVICTION: #56 addr=0x070d tag conflict -> victim to L2 FIFO
+[12205000] 🟢 L3_DRAM_WRITE: #416 addr=0x051c value=5 (l2_fifo_count=17)
+[12215000] 🔵 L1_EVICTION: #57 addr=0x070e tag conflict -> victim to L2 FIFO
+[12215000] 🟢 L3_DRAM_WRITE: #417 addr=0x051d value=5 (l2_fifo_count=17)
+[12225000] 🔵 L1_EVICTION: #58 addr=0x070f tag conflict -> victim to L2 FIFO
+[12225000] 🟢 L3_DRAM_WRITE: #418 addr=0x051e value=5 (l2_fifo_count=17)
+[12235000] 🔵 L1_EVICTION: #59 addr=0x0710 tag conflict -> victim to L2 FIFO
+[12235000] 🟢 L3_DRAM_WRITE: #419 addr=0x051f value=5 (l2_fifo_count=17)
+[12245000] 🔵 L1_EVICTION: #60 addr=0x0711 tag conflict -> victim to L2 FIFO
+[12245000] 🟢 L3_DRAM_WRITE: #420 addr=0x0200 value=10 (l2_fifo_count=17)
+[12255000] 🔵 L1_EVICTION: #61 addr=0x0712 tag conflict -> victim to L2 FIFO
+[12255000] 🟢 L3_DRAM_WRITE: #421 addr=0x0401 value=5 (l2_fifo_count=17)
+[12265000] 🔵 L1_EVICTION: #62 addr=0x0713 tag conflict -> victim to L2 FIFO
+[12265000] 🟢 L3_DRAM_WRITE: #422 addr=0x0402 value=5 (l2_fifo_count=17)
+[12275000] 🔵 L1_EVICTION: #63 addr=0x0714 tag conflict -> victim to L2 FIFO
+[12275000] 🟢 L3_DRAM_WRITE: #423 addr=0x0403 value=5 (l2_fifo_count=17)
+[12285000] 🔵 L1_EVICTION: #64 addr=0x0715 tag conflict -> victim to L2 FIFO
+[12285000] 🟢 L3_DRAM_WRITE: #424 addr=0x0404 value=5 (l2_fifo_count=17)
+[12295000] 🔵 L1_EVICTION: #65 addr=0x0716 tag conflict -> victim to L2 FIFO
+[12295000] 🟢 L3_DRAM_WRITE: #425 addr=0x0405 value=5 (l2_fifo_count=17)
+[12305000] 🔵 L1_EVICTION: #66 addr=0x0717 tag conflict -> victim to L2 FIFO
+[12305000] 🟢 L3_DRAM_WRITE: #426 addr=0x0406 value=5 (l2_fifo_count=17)
+[12315000] 🔵 L1_EVICTION: #67 addr=0x0718 tag conflict -> victim to L2 FIFO
+[12315000] 🟢 L3_DRAM_WRITE: #427 addr=0x0407 value=5 (l2_fifo_count=17)
+[12325000] 🔵 L1_EVICTION: #68 addr=0x0719 tag conflict -> victim to L2 FIFO
+[12325000] 🟢 L3_DRAM_WRITE: #428 addr=0x0408 value=5 (l2_fifo_count=17)
+[12335000] 🔵 L1_EVICTION: #69 addr=0x071a tag conflict -> victim to L2 FIFO
+[12335000] 🟢 L3_DRAM_WRITE: #429 addr=0x0409 value=5 (l2_fifo_count=17)
+[12345000] 🔵 L1_EVICTION: #70 addr=0x071b tag conflict -> victim to L2 FIFO
+[12345000] 🟢 L3_DRAM_WRITE: #430 addr=0x040a value=5 (l2_fifo_count=17)
+[12355000] 🔵 L1_EVICTION: #71 addr=0x071c tag conflict -> victim to L2 FIFO
+[12355000] 🟢 L3_DRAM_WRITE: #431 addr=0x040b value=5 (l2_fifo_count=17)
+[12365000] 🔵 L1_EVICTION: #72 addr=0x071d tag conflict -> victim to L2 FIFO
+[12365000] 🟢 L3_DRAM_WRITE: #432 addr=0x040c value=5 (l2_fifo_count=17)
+[12375000] 🔵 L1_EVICTION: #73 addr=0x071e tag conflict -> victim to L2 FIFO
+[12375000] 🟢 L3_DRAM_WRITE: #433 addr=0x040d value=5 (l2_fifo_count=17)
+[12385000] 🔵 L1_EVICTION: #74 addr=0x071f tag conflict -> victim to L2 FIFO
+[12385000] 🟢 L3_DRAM_WRITE: #434 addr=0x040e value=5 (l2_fifo_count=17)
+[12395000] 🔵 L1_EVICTION: #75 addr=0x0800 tag conflict -> victim to L2 FIFO
+[12395000] 🟢 L3_DRAM_WRITE: #435 addr=0x040f value=5 (l2_fifo_count=17)
+[12405000] 🔵 L1_EVICTION: #76 addr=0x0801 tag conflict -> victim to L2 FIFO
+[12405000] 🟢 L3_DRAM_WRITE: #436 addr=0x0410 value=5 (l2_fifo_count=17)
+[12415000] 🔵 L1_EVICTION: #77 addr=0x0802 tag conflict -> victim to L2 FIFO
+[12415000] 🟢 L3_DRAM_WRITE: #437 addr=0x0411 value=5 (l2_fifo_count=17)
+[12425000] 🔵 L1_EVICTION: #78 addr=0x0803 tag conflict -> victim to L2 FIFO
+[12425000] 🟢 L3_DRAM_WRITE: #438 addr=0x0412 value=5 (l2_fifo_count=17)
+[12435000] 🔵 L1_EVICTION: #79 addr=0x0804 tag conflict -> victim to L2 FIFO
+[12435000] 🟢 L3_DRAM_WRITE: #439 addr=0x0413 value=5 (l2_fifo_count=17)
+[12445000] 🔵 L1_EVICTION: #80 addr=0x0805 tag conflict -> victim to L2 FIFO
+[12445000] 🟢 L3_DRAM_WRITE: #440 addr=0x0414 value=5 (l2_fifo_count=17)
+[12455000] 🔵 L1_EVICTION: #81 addr=0x0806 tag conflict -> victim to L2 FIFO
+[12455000] 🟢 L3_DRAM_WRITE: #441 addr=0x0415 value=5 (l2_fifo_count=17)
+[12465000] 🔵 L1_EVICTION: #82 addr=0x0807 tag conflict -> victim to L2 FIFO
+[12465000] 🟢 L3_DRAM_WRITE: #442 addr=0x0416 value=5 (l2_fifo_count=17)
+[12475000] 🔵 L1_EVICTION: #83 addr=0x0808 tag conflict -> victim to L2 FIFO
+[12475000] 🟢 L3_DRAM_WRITE: #443 addr=0x0417 value=5 (l2_fifo_count=17)
+[12485000] 🔵 L1_EVICTION: #84 addr=0x0809 tag conflict -> victim to L2 FIFO
+[12485000] 🟢 L3_DRAM_WRITE: #444 addr=0x0418 value=5 (l2_fifo_count=17)
+[12495000] 🔵 L1_EVICTION: #85 addr=0x080a tag conflict -> victim to L2 FIFO
+[12495000] 🟢 L3_DRAM_WRITE: #445 addr=0x0419 value=5 (l2_fifo_count=17)
+[12505000] 🔵 L1_EVICTION: #86 addr=0x080b tag conflict -> victim to L2 FIFO
+[12505000] 🟢 L3_DRAM_WRITE: #446 addr=0x041a value=5 (l2_fifo_count=17)
+[12515000] 🔵 L1_EVICTION: #87 addr=0x080c tag conflict -> victim to L2 FIFO
+[12515000] 🟢 L3_DRAM_WRITE: #447 addr=0x041b value=5 (l2_fifo_count=17)
+[12525000] 🔵 L1_EVICTION: #88 addr=0x080d tag conflict -> victim to L2 FIFO
+[12525000] 🟢 L3_DRAM_WRITE: #448 addr=0x041c value=5 (l2_fifo_count=17)
+[12535000] 🔵 L1_EVICTION: #89 addr=0x080e tag conflict -> victim to L2 FIFO
+[12535000] 🟢 L3_DRAM_WRITE: #449 addr=0x041d value=5 (l2_fifo_count=17)
+[12545000] 🔵 L1_EVICTION: #90 addr=0x080f tag conflict -> victim to L2 FIFO
+[12545000] 🟢 L3_DRAM_WRITE: #450 addr=0x041e value=5 (l2_fifo_count=17)
+[12555000] 🔵 L1_EVICTION: #91 addr=0x0810 tag conflict -> victim to L2 FIFO
+[12555000] 🟢 L3_DRAM_WRITE: #451 addr=0x041f value=5 (l2_fifo_count=17)
+[12565000] 🔵 L1_EVICTION: #92 addr=0x0811 tag conflict -> victim to L2 FIFO
+[12565000] 🟢 L3_DRAM_WRITE: #452 addr=0x0400 value=5 (l2_fifo_count=17)
+[12575000] 🔵 L1_EVICTION: #93 addr=0x0812 tag conflict -> victim to L2 FIFO
+[12575000] 🟢 L3_DRAM_WRITE: #453 addr=0x0201 value=10 (l2_fifo_count=17)
+[12585000] 🔵 L1_EVICTION: #94 addr=0x0813 tag conflict -> victim to L2 FIFO
+[12585000] 🟢 L3_DRAM_WRITE: #454 addr=0x0202 value=10 (l2_fifo_count=17)
+[12595000] 🔵 L1_EVICTION: #95 addr=0x0814 tag conflict -> victim to L2 FIFO
+[12595000] 🟢 L3_DRAM_WRITE: #455 addr=0x0203 value=10 (l2_fifo_count=17)
+[12605000] 🔵 L1_EVICTION: #96 addr=0x0815 tag conflict -> victim to L2 FIFO
+[12605000] 🟢 L3_DRAM_WRITE: #456 addr=0x0204 value=10 (l2_fifo_count=17)
+[12615000] 🔵 L1_EVICTION: #97 addr=0x0816 tag conflict -> victim to L2 FIFO
+[12615000] 🟢 L3_DRAM_WRITE: #457 addr=0x0205 value=10 (l2_fifo_count=17)
+[12625000] 🔵 L1_EVICTION: #98 addr=0x0817 tag conflict -> victim to L2 FIFO
+[12625000] 🟢 L3_DRAM_WRITE: #458 addr=0x0206 value=10 (l2_fifo_count=17)
+[12635000] 🔵 L1_EVICTION: #99 addr=0x0818 tag conflict -> victim to L2 FIFO
+[12635000] 🟢 L3_DRAM_WRITE: #459 addr=0x0207 value=10 (l2_fifo_count=17)
+[12645000] 🔵 L1_EVICTION: #100 addr=0x0819 tag conflict -> victim to L2 FIFO
+[12645000] 🟢 L3_DRAM_WRITE: #460 addr=0x0208 value=10 (l2_fifo_count=17)
+[12655000] 🔵 L1_EVICTION: #101 addr=0x081a tag conflict -> victim to L2 FIFO
+[12655000] 🟢 L3_DRAM_WRITE: #461 addr=0x0209 value=10 (l2_fifo_count=17)
+[12665000] 🔵 L1_EVICTION: #102 addr=0x081b tag conflict -> victim to L2 FIFO
+[12665000] 🟢 L3_DRAM_WRITE: #462 addr=0x020a value=10 (l2_fifo_count=17)
+[12675000] 🔵 L1_EVICTION: #103 addr=0x081c tag conflict -> victim to L2 FIFO
+[12675000] 🟢 L3_DRAM_WRITE: #463 addr=0x020b value=10 (l2_fifo_count=17)
+[12685000] 🔵 L1_EVICTION: #104 addr=0x081d tag conflict -> victim to L2 FIFO
+[12685000] 🟢 L3_DRAM_WRITE: #464 addr=0x020c value=10 (l2_fifo_count=17)
+[12695000] 🔵 L1_EVICTION: #105 addr=0x081e tag conflict -> victim to L2 FIFO
+[12695000] 🟢 L3_DRAM_WRITE: #465 addr=0x020d value=10 (l2_fifo_count=17)
+[12705000] 🔵 L1_EVICTION: #106 addr=0x081f tag conflict -> victim to L2 FIFO
+[12705000] 🟢 L3_DRAM_WRITE: #466 addr=0x020e value=10 (l2_fifo_count=17)
+[12715000] 🔵 L1_EVICTION: #107 addr=0x0a00 tag conflict -> victim to L2 FIFO
+[12715000] 🟢 L3_DRAM_WRITE: #467 addr=0x020f value=10 (l2_fifo_count=17)
+[12725000] 🟢 L3_DRAM_WRITE: #468 addr=0x0210 value=10 (l2_fifo_count=17)
+[12735000] 🟢 L3_DRAM_WRITE: #469 addr=0x0211 value=10 (l2_fifo_count=16)
+[12745000] 🟢 L3_DRAM_WRITE: #470 addr=0x0212 value=10 (l2_fifo_count=15)
+[12755000] 🟢 L3_DRAM_WRITE: #471 addr=0x0213 value=10 (l2_fifo_count=14)
+[12765000] 🟢 L3_DRAM_WRITE: #472 addr=0x0214 value=10 (l2_fifo_count=13)
+[12775000] 🟢 L3_DRAM_WRITE: #473 addr=0x0215 value=10 (l2_fifo_count=12)
+[12785000] 🟢 L3_DRAM_WRITE: #474 addr=0x0216 value=10 (l2_fifo_count=11)
+[12795000] 🟢 L3_DRAM_WRITE: #475 addr=0x0217 value=10 (l2_fifo_count=10)
+[12805000] 🟢 L3_DRAM_WRITE: #476 addr=0x0218 value=10 (l2_fifo_count=9)
+[12815000] 🟢 L3_DRAM_WRITE: #477 addr=0x0219 value=10 (l2_fifo_count=8)
+[12825000] 🟢 L3_DRAM_WRITE: #478 addr=0x021a value=10 (l2_fifo_count=7)
+[12835000] 🟢 L3_DRAM_WRITE: #479 addr=0x021b value=10 (l2_fifo_count=6)
+[12845000] 🟢 L3_DRAM_WRITE: #480 addr=0x021c value=10 (l2_fifo_count=5)
+[12855000] 🟢 L3_DRAM_WRITE: #481 addr=0x021d value=10 (l2_fifo_count=4)
+[12865000] 🟢 L3_DRAM_WRITE: #482 addr=0x021e value=10 (l2_fifo_count=3)
+[12875000] 🟢 L3_DRAM_WRITE: #483 addr=0x021f value=10 (l2_fifo_count=2)
+[12885000] 🟢 L3_DRAM_WRITE: #484 addr=0x0500 value=5 (l2_fifo_count=1)
+[12955000] 🟡 L1_ACCUM_OVERFLOW: #39 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[13205000] 🟡 L1_ACCUM_OVERFLOW: #40 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[13455000] 🟡 L1_ACCUM_OVERFLOW: #41 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[13705000] 🟡 L1_ACCUM_OVERFLOW: #42 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[13955000] 🟡 L1_ACCUM_OVERFLOW: #43 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[14205000] 🟡 L1_ACCUM_OVERFLOW: #44 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[14455000] 🟡 L1_ACCUM_OVERFLOW: #45 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[14705000] 🟡 L1_ACCUM_OVERFLOW: #46 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[14955000] 🟡 L1_ACCUM_OVERFLOW: #47 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+[15205000] 🟡 L1_ACCUM_OVERFLOW: #48 addr=0x0a00 |accum| >= THRESHOLD -> L2 FIFO
+- /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/tb_unified_gradient_compressor.sv:293: Verilog $finish
+
+
+======================================================================
+ FINAL STATISTICS - All Writeback Mechanisms
+======================================================================
+1️⃣  Direct Trigger (|grad| >= THRESHOLD)    : 339 events
+2️⃣  Accumulation Threshold (accum >= THRESHOLD) : 48 events
+3️⃣  MAX_UPDATES Force-Flush               : 0 events
+4️⃣  Eviction (tag conflict)               : 107 events
+5️⃣  DRAM Writes (FIFO -> DRAM)             : 484 events
+======================================================================
+
+Total L1->FIFO pushes: 494
+Total FIFO->DRAM writes: 484
+
+⚠️  WARNING: Not all mechanisms triggered
+
+📊 Check waveform file: detailed_waveform_analysis.fst
+Look for debug signals:
+  L1 Cache (Accumulator):
+    - debug_l1_wb_direct
+    - debug_l1_wb_accum_overflow
+    - debug_l1_wb_max_updates
+    - debug_l1_wb_eviction 👈 EVICTION MARKER!
+    - debug_l1_hit / debug_l1_miss
+  L2 FIFO (Writeback Buffer):
+    - debug_l2_fifo_count
+    - debug_l2_burst_ready
+    - debug_l2_draining
+  L3 DRAM (Final Output):
+    - dram_valid / dram_address / dram_value
+
+======================================================================
+ BANDWIDTH PERFORMANCE REPORT
+======================================================================
+Raw Input Transactions  : 1448 (5792 Bytes)
+Output Writes to Memory : 484 (1936 Bytes)
+----------------------------------------------------------------------
+Bandwidth Reduction     : 66.57 %
+Compression Ratio       : 2.99 x
+======================================================================
+
+- S i m u l a t i o n   R e p o r t: Verilator 5.038 2025-07-08
+- Verilator: $finish at 16us; walltime 0.074 s; speed 214.579 us/s
+- Verilator: cpu 0.074 s on 1 threads; alloced 203 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/26757e44-8863-43ae-9da8-e83c5ac6890b.edacmd/eda.work/sim_unified.sim/sim.log
+INFO: [EDA] Tool - verilator, total counts: 5 tool warnings, 0 tool errors
+INFO: [EDA] sim - verilator - tb_unified_gradient_compressor: No errors observed.
+INFO: [EDA] Closing logfile: eda.work/eda.log
+INFO: [EDA] Wrote artifacts JSON: eda.work/sim_unified.sim/artifacts.json
+INFO: [EDA] Exiting with 0 warnings, 0 errors
+Stderr

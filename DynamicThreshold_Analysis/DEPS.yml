@@ -1,0 +1,93 @@
+# =============================================================================
+# DEPS Configuration for Gradient Noise Filtering and Caching System
+# =============================================================================
+# This file defines compilation dependencies and targets for the gradient
+# system modules. Use these targets for simulation, synthesis, or linting.
+#
+# Usage:
+#   - Individual module targets for isolated testing/synthesis
+#   - System target for complete integration
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Individual Module Targets
+# -----------------------------------------------------------------------------
+
+# Dynamic Threshold Controller - EMA-based threshold computation
+threshold_controller:
+  deps:
+    - dynamic_threshold_controller.sv
+  top: dynamic_threshold_controller
+
+# Gradient Noise Filter - Routes gradients based on magnitude
+noise_filter:
+  deps:
+    - gradient_noise_filter.sv
+  top: gradient_noise_filter
+
+# Direct-Mapped Cache - Accumulates low-magnitude gradients
+cache:
+  deps:
+    - direct_mapped_cache.sv
+  top: direct_mapped_cache
+
+# Memory Write Arbiter - Arbitrates between Path A and eviction path
+arbiter:
+  deps:
+    - memory_write_arbiter.sv
+  top: memory_write_arbiter
+
+# -----------------------------------------------------------------------------
+# Complete System Target
+# -----------------------------------------------------------------------------
+
+# Gradient System Top - Full integration of all modules
+gradient_system:
+  deps:
+    - dynamic_threshold_controller.sv
+    - gradient_noise_filter.sv
+    - direct_mapped_cache.sv
+    - memory_write_arbiter.sv
+    - gradient_system_top.sv
+  top: gradient_system_top
+
+# -----------------------------------------------------------------------------
+# Alternative System Target (using target references)
+# -----------------------------------------------------------------------------
+
+# Same as gradient_system but using target references for cleaner organization
+gradient_system_modular:
+  deps:
+    - threshold_controller
+    - noise_filter
+    - cache
+    - arbiter
+    - gradient_system_top.sv
+  top: gradient_system_top
+
+# -----------------------------------------------------------------------------
+# Testbench Targets
+# -----------------------------------------------------------------------------
+
+# Testbench for gradient_system_top
+# NOTE: This testbench requires bandwidth_perf_monitor.sv to be present
+# If bandwidth_perf_monitor.sv is not available, please comment it out or create it
+test_gradient_system:
+  deps:
+    - dynamic_threshold_controller.sv
+    - gradient_noise_filter.sv
+    - direct_mapped_cache.sv
+    - memory_write_arbiter.sv
+    - gradient_system_top.sv
+    - bandwidth_perf_monitor.sv
+    - tb_gradient_system_top.sv
+  top: tb_gradient_compressor_top
+
+# Alternative testbench target (using target references)
+# NOTE: Requires bandwidth_perf_monitor.sv to be present
+test_gradient_system_modular:
+  deps:
+    - gradient_system
+    - bandwidth_perf_monitor.sv
+    - tb_gradient_system_top.sv
+  top: tb_gradient_compressor_top

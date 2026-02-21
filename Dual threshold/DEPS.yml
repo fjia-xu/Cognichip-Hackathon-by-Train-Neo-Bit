@@ -1,0 +1,43 @@
+# DEPS configuration for gradient compressor testbench
+
+# Testbench simulation target
+sim_gradient_compressor:
+  deps:
+    - gradient_compressor.sv
+    - tb_gradient_compressor.sv
+  top: tb_gradient_compressor
+
+# Debug testbench
+sim_gradient_debug:
+  deps:
+    - gradient_compressor.sv
+    - tb_gradient_debug.sv
+  top: tb_gradient_debug
+
+# SMALL_THRESHOLD feature validation testbench
+sim_threshold_test:
+  deps:
+    - gradient_compressor.sv
+    - tb_gradient_compressor_threshold.sv
+  top: tb_gradient_compressor_threshold
+
+# Simplified SMALL_THRESHOLD validation
+sim_simple:
+  deps:
+    - gradient_compressor.sv
+    - tb_gradient_simple.sv
+  top: tb_gradient_simple
+
+# Comprehensive stress test - small params (fast)
+sim_stress_small:
+  deps:
+    - gradient_compressor.sv
+    - tb_new.sv
+  top: tb_small_params
+
+# Comprehensive stress test - default params
+sim_stress_default:
+  deps:
+    - gradient_compressor.sv
+    - tb_new.sv
+  top: tb_default_params

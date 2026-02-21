@@ -1,0 +1,11 @@
+# 新增的统一测试 target
+sim_unified:
+  deps:
+    - gradient_buffer.sv
+    - gradient_accumulator_top.sv
+    - gradient_writeback_buffer.sv
+    - gradient_accumulator.sv
+    - gradient_compressor_top.sv
+    - bandwidth_perf_monitor.sv           # 新增：性能与带宽监控模块
+    - tb_unified_gradient_compressor.sv   # 新增：统一顶层 TB
+  top: tb_unified_gradient_compressor

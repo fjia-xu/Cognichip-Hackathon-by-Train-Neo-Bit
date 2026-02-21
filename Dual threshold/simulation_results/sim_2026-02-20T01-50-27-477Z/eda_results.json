@@ -1,0 +1,23 @@
+{
+  "stdout_truncated": false,
+  "stdout": "INFO: [EDA] eda: version 0.3.10\nINFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves sim_stress_small; (run from /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd)\nINFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed\nINFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml\nINFO: [EDA] *** OpenCOS EDA ***\nINFO: [EDA] Detected verilator (/usr/local/bin/verilator)\nINFO: [EDA] sim: top-most target name: sim_stress_small\nINFO: [EDA] --waves arg present, no $dumpfile found, adding SV file: /app/venv/lib/python3.12/site-packages/opencos/commands/../_waves_pkg.sv\nINFO: [EDA] exec: /usr/local/bin/verilator --binary -Wno-CASEINCOMPLETE -Wno-REALCVT -Wno-SELRANGE -Wno-TIMESCALEMOD -Wno-UNSIGNED -Wno-WIDTH -Wno-fatal --timing --assert --autoflush -sv -CFLAGS -O1 -j 7 --trace-structs --trace-params --trace-fst -top tb_small_params -o sim.exe +define+SIMULATION /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/gradient_compressor.sv /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/tb_new.sv /app/venv/lib/python3.12/site-packages/opencos/_waves_pkg.sv (in eda.work/sim_stress_small.sim, tee_fpath='compile.log')\nINFO: [EDA] PID 1622 for /usr/local/bin/verilator\n%Error: /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/tb_new.sv:299:39: Return underneath a function should have return value\n  299 |           sb_find_dutp = 1'b0; s = 0; return;\n      |                                       ^~~~~~\n        ... See the manual at https://verilator.org/verilator_doc.html?v=5.038 for more assistance.\n%Error: /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/tb_new.sv:301:51: Return underneath a function should have return value\n  301 |           sb_find_dutp = 1'b1; s = dutp_sum[idx]; return;\n      |                                                   ^~~~~~\n%Error: /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/tb_new.sv:315:39: Return underneath a function should have return value\n  315 |           sb_find_dutd = 1'b0; s = 0; return;\n      |                                       ^~~~~~\n%Error: /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/tb_new.sv:317:51: Return underneath a function should have return value\n  317 |           sb_find_dutd = 1'b1; s = dutd_sum[idx]; return;\n      |                                                   ^~~~~~\n%Error: Exiting due to 4 error(s)\nINFO: [EDA] subprocess_run_background: wrote: /app/eda.work/fdc7e421-8c14-42ef-aff5-cf10e05b4e7c.edacmd/eda.work/sim_stress_small.sim/compile.log\nINFO: [EDA] exec: returned with error (return code: 1)\nINFO: [EDA] Tool - verilator, total counts: 0 tool warnings, 5 tool errors\nERROR: [EDA] sim - verilator - tb_small_params: exec returned with error code: 1\nINFO: [EDA] Wrote artifacts JSON: eda.work/sim_stress_small.sim/artifacts.json\nINFO: [EDA] Exiting with 0 warnings, 1 errors\nINFO: [EDA] Closing logfile: eda.work/eda.log\n",
+  "stdout_size": 2992,
+  "stdout_total_size": 2992,
+  "message": "Simulation failed with return code 255",
+  "warnings": 0,
+  "errors": 0,
+  "stderr": "",
+  "return_code": 255,
+  "start_time": 1771552227.926112,
+  "stop_time": 1771552228.233288,
+  "waves_returned": false,
+  "wave_file": null,
+  "wave_file_size": null,
+  "verilator_version": null,
+  "system_info": null,
+  "work_dir_files": null,
+  "frogger_status_reason": "Simulation failed with return code 255",
+  "fst_s3_key": null,
+  "fst_s3_bucket": null,
+  "error": "Simulation failed with return code 255"
+}
